@@ -1,0 +1,10 @@
+#titlebar {
+  background-color: rgb(34, 34, 34);
+}
+
+#titlebar span {
+  color: white;
+  font-family: monospace;
+  font-style: italic;
+  font-weight: 500;
+}
