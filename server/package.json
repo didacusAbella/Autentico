@@ -1,0 +1,25 @@
+{
+  "name": "autentico",
+  "description": "API RESTful Service for Autentico",
+  "authors": "Diego Avella, Giammaria Giordano, Valeria Pontillo",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "url": "https://github.com/didacusAbella/Autentico.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.16.4",
+    "sequelize": "4.39.0",
+    "sqlite3": "4.0.2"
+  },
+  "devDependencies": {
+    "mocha": "5.2.0",
+    "chai": "4.2.0",
+    "chai-http": "4.2.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha --recursive"
+  }
+}
