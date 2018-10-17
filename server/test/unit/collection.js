@@ -7,15 +7,15 @@ const expect = chai.expect;
 chai.use(chai_http);
 
 /*Create test suite */
-describe('Describe Clothing API', function(){
+describe('Describe Collection API', function(){
   this.timeout(5000);
-  it('It should return all clothings', function(){
+  it('It should return all collections', function(){
     return chai.request(app)
-    .get('/clothings')
+    .get('/collections')
     .then(function(res){
       expect(res).to.have.status(200);
       expect(res).to.be.json;
       expect(res.body).to.be.an('array');
     });
   });
-}); 
+});
