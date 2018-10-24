@@ -23,7 +23,8 @@
     "core-js": "^2.5.4",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26",
-    "uikit": "3.0.0-rc.19"
+    "uikit": "3.0.0-rc.19",
+    "ngx-pagination": "3.2.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",

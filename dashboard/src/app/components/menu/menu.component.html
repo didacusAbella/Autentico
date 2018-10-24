@@ -1,0 +1,9 @@
+<ul class="uk-nav uk-nav-secondary uk-margin-auto-vertical">
+  <h4>{{ getMenuName() }}</h4>
+  <li *ngFor="let table of getTables()">
+    <a routerLink="/{{ table }}">
+      <span class="uk-margin-small-right" uk-icon="icon: folder"></span>
+     {{ table }} 
+    </a>
+  </li>
+</ul>

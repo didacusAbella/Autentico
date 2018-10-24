@@ -11,6 +11,12 @@ let colorApi      = require('./api/color/api');
 let collectionApi = require('./api/collection/api');
 let brandApi      = require('./api/brand/api');
 
+app.use(function(req, res, next){
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  next();
+});
+
 app.use('/clothings', clothingApi);
 app.use('/colors', colorApi);
 app.use('/collections', collectionApi);
