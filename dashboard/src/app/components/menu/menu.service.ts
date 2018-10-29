@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+//import { Http } from "@angular/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
 
-  constructor(private http :Http) { }
+  constructor(/*private http :Http*/) { }
 
   /**
    * getTables

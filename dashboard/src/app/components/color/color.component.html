@@ -1,0 +1,17 @@
+<section class="uk-card uk-card-default">
+  <header class="uk-card-header">
+    <h3>
+      <strong>Id:</strong>
+      <em>{{ color.id }}</em>
+    </h3>
+    <h4>
+      <strong>Hex:</strong>
+      <em>{{ color.hex }}</em>
+    </h4>
+  </header>
+  <main class="uk-card-body" [style.background-color]="color.hex"></main>
+  <footer class="uk-card-footer">
+    <a class="uk-icon-link" uk-icon="file-edit" uk-tooltip="Modifica Risorsa"></a>
+    <a class="uk-icon-link" uk-icon="trash" uk-tooltip="Elimina Risorsa"></a>
+  </footer>
+</section>

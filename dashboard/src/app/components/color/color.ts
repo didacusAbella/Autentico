@@ -1,4 +1,5 @@
 export class Color {
+  
   public id :number;
   public hex :string;
 

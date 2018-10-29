@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
-export class Api<T> {
+export class ApiService<T> {
 
   protected protocol :string;
   protected apiHost :string;

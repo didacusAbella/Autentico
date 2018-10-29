@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Api } from 'src/app/shared/api';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { Color } from './color';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ColorsService extends Api<Color> {
+export class ColorsService extends ApiService<Color> {
 
   constructor(endpoint: HttpClient) {
     super(endpoint, 'colors');

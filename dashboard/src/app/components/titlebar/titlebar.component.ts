@@ -1,24 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'dash-titlebar',
+  selector: 'ad-titlebar',
   templateUrl: './titlebar.component.html',
   styleUrls: ['./titlebar.component.css']
 })
-export class TitlebarComponent implements OnInit {
+export class TitlebarComponent {
 
-  private readonly title :string;
+  readonly title :string;
 
   constructor() { 
     this.title = '@utentico Dashboard';
   }
-
-  ngOnInit() {
-  }
   
-  public getTitle() : string {
-    return  this.title;
-  }
-
-
 }
