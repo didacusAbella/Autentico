@@ -1,0 +1,23 @@
+<section uk-grid>
+  <div class="uk-width-1-2@s">
+    <dl class="uk-description-list">
+      <dt>Id</dt>
+      <dd>{{cloth.id}}</dd>
+      <dt>Nome</dt>
+      <dd>{{ cloth.name }}</dd>
+      <dt>Collezione</dt>
+      <dd>{{ cloth.collection_fk }}</dd>
+    </dl>
+  </div>
+  <div class="uk-width-1-2@s">
+    <form>
+      <fieldset class="uk-fieldset">
+          <legend class="uk-legend">Modifica Vestito</legend>
+          <input class="uk-input" type="number" placeholder="Inserisci Id" required name="id"/>
+          <input class="uk-input" type="text" name="name" placeholder="Inserisci Nome" required/>
+          <input class="uk-input" type="number" name="collection_fk" placeholder="Inserisci id Collezione"/>
+          <textarea class="uk-textarea" name="description" placeholder="Insersci Descrizione (Opzionale)"></textarea>
+      </fieldset>
+    </form>
+  </div>
+</section>

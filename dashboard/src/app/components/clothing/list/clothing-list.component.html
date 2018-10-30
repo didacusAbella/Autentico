@@ -1,6 +1,5 @@
-<h2>Gestione Vestiti</h2>
 <div uk-grid class="uk-grid-small uk-text-center">
   <div *ngFor="let cloth of getResources(); let i=index">
-    <ad-clothing [clothing]="cloth"></ad-clothing>
+    <ad-clothing-overview [clothing]="cloth"></ad-clothing-overview>
   </div>
 </div>

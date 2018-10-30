@@ -6,7 +6,7 @@
     <img uk-img data-src="assets/clothing_placeholder.png"/>
   </main>
   <footer class="uk-card-footer">
-      <a class="uk-icon-link" uk-icon="file-edit" uk-tooltip="Modifica Risorsa"></a>
+      <a class="uk-icon-link" uk-icon="file-edit" uk-tooltip="Modifica Risorsa" [routerLink]="['./', clothing.id]"></a>
       <a class="uk-icon-link" uk-icon="trash" uk-tooltip="Elimina Risorsa"></a>
   </footer>
 </section>

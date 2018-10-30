@@ -4,11 +4,10 @@ import { Color } from 'src/app/components/color/color';
 import { ColorsService } from 'src/app/components/color/color.service';
 
 @Component({
-  selector: 'ad-colors-page',
-  templateUrl: './colors-page.component.html',
-  styles: []
+  selector: 'ad-color-list',
+  templateUrl: './color-list.component.html'
 })
-export class ColorsPageComponent extends ResourceComponent<Color, ColorsService> implements OnInit {
+export class ColorListComponent extends ResourceComponent<Color, ColorsService> implements OnInit {
 
   constructor(protected endpoint :ColorsService) {
     super(endpoint);

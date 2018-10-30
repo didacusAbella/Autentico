@@ -11,7 +11,7 @@
   </header>
   <main class="uk-card-body" [style.background-color]="color.hex"></main>
   <footer class="uk-card-footer">
-    <a class="uk-icon-link" uk-icon="file-edit" uk-tooltip="Modifica Risorsa"></a>
+    <a class="uk-icon-link" uk-icon="file-edit" uk-tooltip="Modifica Risorsa" [routerLink]="['./', color.id]"></a>
     <a class="uk-icon-link" uk-icon="trash" uk-tooltip="Elimina Risorsa"></a>
   </footer>
 </section>

@@ -20,7 +20,13 @@ router.get('/', function(req, res) {
  * @param id the id of the clothing
  */
 router.get('/:id', function(req, res) {
-  clothingController.findClothingById(req.params.id);
+  clothingController.findClothingById(req.params.id)
+  .then(foundClothing => {
+    res.status(200).json(foundClothing);
+  })
+  .catch(function(error){
+    res.status(400).json({ error: "Bad Request Try Again"})
+  });
 });
 
 module.exports = router;

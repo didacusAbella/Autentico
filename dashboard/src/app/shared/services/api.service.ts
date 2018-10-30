@@ -25,7 +25,7 @@ export class ApiService<T> {
     return this.endpoint.get<T[]>(this.fullApi);
   }
 
-  public read(id :number) :Observable<T> {
+  public read(id :any) :Observable<T> {
     return this.endpoint.get<T>(`${this.fullApi}/${id}`);
   }
 

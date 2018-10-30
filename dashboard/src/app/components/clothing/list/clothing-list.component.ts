@@ -4,10 +4,10 @@ import { Clothing } from 'src/app/components/clothing/clothing';
 import { ClothingService } from 'src/app/components/clothing/clothing.service';
 
 @Component({
-  selector: 'ad-clothings-page',
-  templateUrl: './clothings-page.component.html'
+  selector: 'ad-clothing-list',
+  templateUrl: './clothing-list.component.html'
 })
-export class ClothingsPageComponent extends ResourceComponent<Clothing, ClothingService> implements OnInit {
+export class ClothingListComponent extends ResourceComponent<Clothing, ClothingService> implements OnInit {
 
   constructor(protected endpoint :ClothingService) { 
     super(endpoint);
