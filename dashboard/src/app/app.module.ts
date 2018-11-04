@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*Vendor and Custom Modules */
 //import { NgxPaginationModule } from "ngx-pagination";
 import { AppRoutingModule } from "./app.router.module";
-//import { ClothingsPageModule } from './pages/clothings-page/clothings-page.module';
 
 /* Components Loading */
 import { AppComponent } from './app.component';

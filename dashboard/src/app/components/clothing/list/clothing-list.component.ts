@@ -13,7 +13,7 @@ export class ClothingListComponent extends ResourceComponent<Clothing, ClothingS
     super(endpoint);
   }
 
-  ngOnInit() {
+  public ngOnInit() :void {
     this.endPoint.readAll().subscribe(datas => {
       this.setResources(datas);
     });

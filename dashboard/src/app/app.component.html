@@ -1,12 +1,9 @@
-<div class="uk-offcanvas-content" uk-grid>
-  <div class="uk-width-1-1">
-      <ad-titlebar></ad-titlebar>
-      <router-outlet></router-outlet>
-  </div>
-  <div id="menu" uk-offcanvas>
-    <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <ad-menu></ad-menu>
-    </div>
-  </div>
+<div class="off-canvas-wrapper">
+  <aside class="off-canvas position-left" id="menu" data-off-canvas>
+    <ad-menu></ad-menu>
+  </aside>
+  <section class="off-canvas-content" data-off-canvas-content>
+    <ad-titlebar></ad-titlebar>
+    <router-outlet></router-outlet>
+  </section>
 </div>

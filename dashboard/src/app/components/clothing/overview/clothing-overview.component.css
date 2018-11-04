@@ -1,4 +1,3 @@
-.uk-card img {
-  width: 150px;
-  height: 150px;
+.card > footer a {
+  font-size: 22px;
 }
