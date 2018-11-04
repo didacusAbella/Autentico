@@ -27,9 +27,7 @@ class ClothingController {
    * @param {Number} id the id of the clothing to find
    */
   findClothingById(id){
-    Clothing.findById(id).then(function(clothing){
-      console.log(clothing);
-    });
+    return Clothing.findById(id);
   }
 
 }

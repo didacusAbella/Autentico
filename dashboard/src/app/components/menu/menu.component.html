@@ -1,0 +1,35 @@
+<ul class="vertical menu" id="resourceMenu">
+  <h4>{{ menuName }}</h4>
+  <li *ngFor="let table of tables">
+    <a routerLink="/{{ table }}">
+      <i class="fi-folder"></i>
+      {{ table }}
+    </a>
+  </li>
+</ul>
+<hr />
+<aside id="info">
+  <dl>
+    <dt>Nome</dt>
+    <dd>@utentico Dashboard</dd>
+    <dt>Versione</dt>
+    <dd>1.0.0</dd>
+    <dt>Autori</dt>
+    <dd>
+      <ol>
+        <li>Giammaria Giordano</li>
+        <li>Valeria Pontillo</li>
+        <li>Diego Avella</li>
+      </ol>
+    </dd>
+    <dt>Supervisori</dt>
+    <dd>
+      <ul>
+        <li>Prof. Mariarita Francese</li>
+        <li>NextSoft SPA</li>
+      </ul>
+    </dd>
+    <dt>Copyright</dt>
+    <dd>&copy; 2019</dd>
+  </dl>
+</aside>

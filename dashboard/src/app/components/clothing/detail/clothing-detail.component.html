@@ -1,0 +1,58 @@
+<section class="grid-x grid-padding-x">
+  <form class="cell">
+    <fieldset class="fieldset" *ngIf="cloth">
+      <legend>Modifica Vestito {{cloth.id}}</legend>
+      <label>Id
+        <input type="text" placeholder="Inserisci Id" required name="id" [(ngModel)]="cloth.id" minlength="4" maxlength="4"
+          #Id="ngModel" [class.is-invalid-input]="Id.invalid" />
+        <div *ngIf="Id.invalid && (Id.dirty || Id.touched)">
+          <small *ngIf="Id.errors.required">Id è obbligatorio</small>
+          <small *ngIf="Id.errors.minlength || Id.errors.maxlength">Id deve essere di 4 caratteri</small>
+        </div>
+      </label>
+      <label>Nome
+        <input type="text" name="name" placeholder="Inserisci Nome" required [(ngModel)]="cloth.name" maxlength="30"
+          [class.is-invalid-input]="Name.invalid" #Name="ngModel" />
+        <div *ngIf="Name.invalid && (Name.dirty || Name.touched)">
+          <small *ngIf="Name.errors.required">Il nome è obbligatorio</small>
+          <small *ngIf="Name.errors.maxlength">Nome massimo di 30 caratteri</small>
+        </div>
+      </label>
+      <label>Collezione
+        <input type="number" name="collection_fk" placeholder="Inserisci id Collezione" required [(ngModel)]="cloth.collection_fk"
+          min="0" #Collection="ngModel" [class.is-invalid-input]="Collection.invalid" step="1" />
+        <div *ngIf="Collection.invalid && (Collection.dirty || Collection.touched)">
+          <small *ngIf="Collection.errors.required">La Collezione è obbligatoria</small>
+          <small *ngIf="Collection.errors.min">L'id della collezione non è negativo</small>
+        </div>
+      </label>
+      <label>Brand
+        <input type="number" name="brand_fk" placeholder="Inserisci id Brand" required [(ngModel)]="cloth.brand_fk" min="0"
+          #Brand="ngModel" [class.is-invalid-input]="Brand.invalid" step="1" />
+        <div *ngIf="Brand.invalid && (Brand.dirty || Brand.touched)">
+          <small *ngIf="Brand.errors.required">Il Brand è obbligatorio</small>
+          <small *ngIf="Brand.errors.min">L'id del brand non è negativo</small>
+        </div>
+      </label>
+      <label>Descrizione
+        <textarea class="uk-textarea" rows="5" name="description" placeholder="Inserisci Descrizione (Opzionale)"
+          maxlength="100" [(ngModel)]="cloth.description" #Description="ngModel" [class.is-invalid-input]="Description.invalid">
+          </textarea>
+        <div *ngIf="Description.invalid && (Description.dirty || Description.touched)">
+          <small *ngIf="Description.errors.maxlength">Descrizione non più di 100 parole</small>
+        </div>
+      </label>
+      <fieldset>
+        <input type="checkbox" class="uk-checkbox" id="defect" /><label for="defect">Difettoso</label>
+      </fieldset>
+      <fieldset>
+        <label for="imageUpload" class="button">Carica Immagine</label>
+        <input type="file" class="show-for-sr" id="imageUpload"/>
+      </fieldset>
+      <div class="button-group">
+        <input type="submit" class="button" value="Modifica" />
+        <input type="reset" class="button" value="Annulla" />
+      </div>
+    </fieldset>
+  </form>
+</section>

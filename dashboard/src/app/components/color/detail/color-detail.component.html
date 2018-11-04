@@ -1,0 +1,16 @@
+<section class="grid-x grid-padding-x">
+  <form class="cell">
+    <fieldset *ngIf="colorModel">
+      <label>Id
+        <input type="number" step="1" min="0" required [(ngModel)]="colorModel.id" name="id" #Id="ngModel" placeholder="Inserisci Id">
+      </label>
+      <label>Colore
+        <input type="text" required name="hex" [ngModel]="colorModel.hex" #Hex="ngModel">
+      </label>
+      <div class="button-group">
+        <input type="submit" value="Modifica"/>
+        <input type="reset" value="Annulla">
+      </div>
+    </fieldset>
+  </form>
+</section>

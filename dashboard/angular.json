@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "ad",
       "schematics": {},
       "architect": {
         "build": {
@@ -23,12 +23,14 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/uikit/dist/css/uikit.min.css",
+              "./node_modules/foundation-sites/dist/css/foundation.min.css",
+              "./node_modules/foundation-icons/foundation-icons.css",
               "src/styles.css"
             ],
             "scripts": [
-              "./node_modules/uikit/dist/js/uikit.min.js",
-              "./node_modules/uikit/dist/js/uikit-icons.min.js"
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/what-input/dist/what-input.min.js",
+              "./node_modules/foundation-sites/dist/js/foundation.min.js"
             ]
           },
           "configurations": {

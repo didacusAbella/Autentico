@@ -1,0 +1,5 @@
+<div class="grid-x large-up-6 medium-up-3 small-up-2 grid-margin-x">
+    <div *ngFor="let cloth of getResources(); let i=index" class="cell">
+        <ad-clothing-overview [clothing]="cloth"></ad-clothing-overview>
+    </div>
+</div>
