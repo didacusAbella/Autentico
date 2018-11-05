@@ -9,15 +9,15 @@ import { Color } from "../color";
 })
 export class ColorDetailComponent implements OnInit {
 
-  colorModel :Color;
+  public colorModel :Color;
 
   constructor(private endpoint :ColorsService, private actualRoute :ActivatedRoute){}
 
   ngOnInit(): void {
     this.actualRoute.params.subscribe(routeData => {
-      let id = +routeData['id'];
+      let id = routeData['id'];
       this.endpoint.read(id).subscribe(data => this.colorModel = data);
-    })
+    });
   }
 
 }

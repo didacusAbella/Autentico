@@ -27,9 +27,7 @@ class ColorController {
    * @param {Number} id the id of the color to find
    */
   findColorById(id){
-    Color.findById(id).then(function(color){
-      console.log(color);
-    });
+    return Color.findById(id);
   }
 
 }

@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
     res.status(200).json(colors);
   })
   .catch(function(error){
+    console.error(error);
     res.status(400).json({error: "Bad Request Try Again"})
   });
 });
@@ -20,7 +21,14 @@ router.get('/', function(req, res) {
  * @param id the id of the Color
  */
 router.get('/:id', function(req, res) {
-  colorController.findColorById(req.params.id);
+  colorController.findColorById(req.params.id)
+  .then(color => {
+    res.status(200).json(color);
+  })
+  .catch(function(error){
+    console.error(error);
+    res.status(400).json({error: "Bad Request Try Again"})
+  });
 });
 
 module.exports = router;

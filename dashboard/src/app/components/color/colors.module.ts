@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule, Routes } from "@angular/router";
 
+import { ColorPickerModule } from "ngx-color-picker";
+
 /*Add component */
 import { ColorListComponent } from "./list/color-list.component";
 import { ColorOverviewComponent } from "./overview/color-overview.component";
@@ -28,6 +30,7 @@ const COLOR_ROUTES :Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ColorPickerModule,
     RouterModule.forChild(COLOR_ROUTES)
   ],
   exports: [ RouterModule ]

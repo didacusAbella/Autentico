@@ -1,3 +1,19 @@
+<div class="grid-x grid-margin-x">
+    <div class="input-group cell large-6 medium-6 small-8">
+        <span class="input-group-label">
+            <i class="fi-magnifying-glass"></i>
+        </span>
+        <input type="search" class="input-group-field" placeholder="Cerca" />
+        <div class="input-group-button">
+            <button class="button">Cerca</button>
+        </div>
+    </div>
+    <div class="cell auto">
+        <button class="button round" data-tooltip title="Inserisci Nuovo Capo">
+            <i class="fi-plus"></i>
+        </button>
+    </div>
+</div>
 <div class="grid-x large-up-6 medium-up-3 small-up-2 grid-margin-x">
     <div *ngFor="let cloth of getResources(); let i=index" class="cell">
         <ad-clothing-overview [clothing]="cloth"></ad-clothing-overview>

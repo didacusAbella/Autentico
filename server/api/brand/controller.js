@@ -27,9 +27,7 @@ class BrandController {
    * @param {Number} id the id of the brand to find
    */
   findBrandById(id){
-    Brand.findById(id).then(function(brand){
-      console.log(brand);
-    });
+    return Brand.findById(id);
   }
 
 }
