@@ -1,0 +1,23 @@
+<table class="hover unstriped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Azioni</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let brand of getResources();">
+      <td>{{ brand.id }}</td>
+      <td>{{ brand.name }}</td>
+      <td>
+        <a data-tooltip title="Modifica Risorsa" [routerLink]="['./', brand.id]">
+          <i class="fi-pencil"></i>
+        </a>
+        <a data-tooltip title="Elimina Risorsa">
+          <i class="fi-trash"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

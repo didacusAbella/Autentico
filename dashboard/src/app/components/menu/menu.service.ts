@@ -12,6 +12,6 @@ export class MenuService {
    * getTables
    */
   public loadTables() {
-    return ['clothings', 'brand', 'colors'];
+    return ['clothings', 'brands', 'colors'];
   }
 }

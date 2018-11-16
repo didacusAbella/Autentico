@@ -1,26 +1,19 @@
 let express = require('express');
 let CollectionController = require('./controller');
+let validateRequest = require('../core/utils');
+let CollectionRules = require('./rules');
 let router = express.Router();
 let collectionController = new CollectionController();
-/**
- * Get all Collections avaibles
- */
-router.get('/', function(req, res) {
-  collectionController.allCollections()
-  .then((collections) => {
-    res.status(200).json(collections);
-  })
-  .catch(function(error){
-    res.status(400).json({error: "Bad Request Try Again"})
-  });
-});
 
-/**
- * Get collection with specified id
- * @param id the id of the collection
- */
-router.get('/:id', function(req, res) {
-  collectionController.findCollectionById(req.params.id);
-});
+
+router.get('/', collectionController.allCollections);
+
+router.get('/:id', CollectionRules['findCollectionById'], validateRequest, collectionController.findCollectionById);
+
+router.post('/:id', CollectionRules['createCollection'], validateRequest, collectionController.createCollection);
+
+router.put('/:id', CollectionRules['updateCollection'], validateRequest, collectionController.updateCollection);
+
+router.delete('/:id', CollectionRules['deleteCollection'], validateRequest, collectionController.deleteCollection);
 
 module.exports = router;
