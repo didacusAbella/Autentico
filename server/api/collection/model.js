@@ -1,8 +1,8 @@
 let db = require('../../database/index');
 
 /**
- * Create Collection table
- * TODO need to add validation rules
+ * Collection table
+ * 
  */
 let Collection = db.define('collections', {
   id: {
