@@ -2,7 +2,7 @@ let db = require('../../database/index');
 
 /**
  * Create Clothing table
- * TODO need to add validation rules
+ * 
  */
 let Clothing = db.define('clothing', {
   id: {
@@ -13,7 +13,27 @@ let Clothing = db.define('clothing', {
   name: {
     type: db.Sequelize.STRING(30),
     field: 'name'
+  },
+  collection_fk: {
+    type: db.Sequelize.INTEGER,
+    field: 'collection_fk'
+  },
+  brand_fk: {
+    type: db.Sequelize.INTEGER,
+    field: 'brand_fk'
+  },
+  description: {
+    type: db.Sequelize.STRING(100),
+    field: 'description'
+  },
+  defect: {
+    type: db.Sequelize.BOOLEAN,
+    field: 'defect'
+  },
+  img: {
+    type: db.Sequelize.BLOB,
+    field: 'img'
   }
-})
+});
 
 module.exports = Clothing;
