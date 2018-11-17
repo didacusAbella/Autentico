@@ -1,33 +1,48 @@
 let Color = require('./model');
+let ResponseFactory = require('../core/responsefactory');
 
 /**
  * Controller for Color model
  */
 class ColorController {  
-  /**
-   * Find all Colors avaibles
-   */
-  allColors(){
-    return Color.findAll();
+ 
+  allColors(req, res){
+    Color.findAll()
+    .then(colors => ResponseFactory.createSuccessResponse(res, colors))
+    .catch(colorError => ResponseFactory.createInternalServerResponse(res, colorError));
   }
 
-  /**
-   * Create a new Color    
-   * @param {Number} id the id of the Color 
-   * @param {String} hex the hex of the Color
-   */
-  createColor(id, hex){
-    Color.create({ id: id, hex: hex}).then(function(created_color){
-      console.log(created_color);
+  
+  createColor(req, res){
+    Color.create({
+       id: req.params.id,
+       hex: req.params.hex
+      })
+      .then(createdColor => ResponseFactory.createSuccessResponse(res, createdColor))
+      .catch(colorError => ResponseFactory.createInternalServerResponse(res, colorError));
+  }
+
+  
+  findColorById(req, res){
+    Color.findById(req.params.id)
+    .then(foundColor => ResponseFactory.createSuccessResponse(res, foundColor))
+    .catch(colorError => ResponseFactory.createInternalServerResponse(res, colorError));
+  }
+
+  updateColor(req, res){
+    Color.update({
+      hex: req.params.hex
+    }, { where: { id: req.params.id } })
+    .then(updatedColor => ResponseFactory.createSuccessResponse(res, updatedColor))
+    .catch(colorError => ResponseFactory.createInternalServerResponse(res, colorError));
+  }
+
+  deleteColor(req, res){
+    Color.destroy({
+      where: { id: req.params.id }
     })
-  }
-
-  /**
-   * Find a Color with a specific id
-   * @param {Number} id the id of the color to find
-   */
-  findColorById(id){
-    return Color.findById(id);
+    .then(deletedColor => ResponseFactory.createSuccessResponse(res, deletedColor))
+    .catch(colorError => ResponseFactory.createInternalServerResponse(res, colorError));
   }
 
 }

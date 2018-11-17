@@ -1,34 +1,19 @@
 let express = require('express');
 let ColorController = require('./controller');
+let validateRequest = require('../core/utils');
+let ColorRules = require('./rules');
 let router = express.Router();
 let colorController = new ColorController();
-/**
- * Get all colors avaibles
- */
-router.get('/', function(req, res) {
-  colorController.allColors()
-  .then((colors) => {
-    res.status(200).json(colors);
-  })
-  .catch(function(error){
-    console.error(error);
-    res.status(400).json({error: "Bad Request Try Again"})
-  });
-});
 
-/**
- * Get color with specified id
- * @param id the id of the Color
- */
-router.get('/:id', function(req, res) {
-  colorController.findColorById(req.params.id)
-  .then(color => {
-    res.status(200).json(color);
-  })
-  .catch(function(error){
-    console.error(error);
-    res.status(400).json({error: "Bad Request Try Again"})
-  });
-});
+
+router.get('/', colorController.allColors);
+
+router.get('/:id', ColorRules['findColorById'], validateRequest, colorController.findColorById);
+
+router.post('/:id', ColorRules['createColor'], validateRequest, colorController.createColor);
+
+router.put('/:id', ColorRules['updateColor'], validateRequest, colorController.updateColor);
+
+router.delete('/:id', ColorRules['deleteColor'], validateRequest, colorController.deleteColor);
 
 module.exports = router;
