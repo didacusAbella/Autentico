@@ -4,7 +4,7 @@
       <legend>Modifica {{ brandModel.name }}</legend>
       <label>Id
         <input type="number" min="0" placeholder="Inserisci Id" name="id" [(ngModel)]="brandModel.id"
-         #Id="ngModel" required [class.is-invalid-input]="Id.invalid"/>
+         #Id="ngModel" required [class.is-invalid-input]="Id.invalid" disabled>
          <div *ngIf="Id.invalid && (Id.dirty || Id.touched)">
             <small *ngIf="Id.errors.required">Id è obbligatorio</small>
             <small *ngIf="Id.errors.min">Id deve essere maggiore di 0</small>

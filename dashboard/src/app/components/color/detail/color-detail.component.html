@@ -2,7 +2,7 @@
   <form class="cell medium-6 large-6 small-12">
     <fieldset *ngIf="colorModel" class="fieldset">
       <label>Id
-        <input type="number" step="1" min="0" required [(ngModel)]="colorModel.id" name="id" #Id="ngModel" placeholder="Inserisci Id">
+        <input type="number" step="1" min="0" required [(ngModel)]="colorModel.id" name="id" #Id="ngModel" placeholder="Inserisci Id" disabled>
       </label>
       <label>Colore
         <span [cpToggle]="true" [cpDialogDisplay]="'inline'" [cpCancelButton]="true" 

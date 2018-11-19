@@ -4,7 +4,7 @@
       <legend>Modifica Vestito {{cloth.id}}</legend>
       <label>Id
         <input type="text" placeholder="Inserisci Id" required name="id" [(ngModel)]="cloth.id" minlength="4" maxlength="4"
-          #Id="ngModel" [class.is-invalid-input]="Id.invalid" />
+          #Id="ngModel" [class.is-invalid-input]="Id.invalid" disabled/>
         <div *ngIf="Id.invalid && (Id.dirty || Id.touched)">
           <small *ngIf="Id.errors.required">Id è obbligatorio</small>
           <small *ngIf="Id.errors.minlength || Id.errors.maxlength">Id deve essere di 4 caratteri</small>
