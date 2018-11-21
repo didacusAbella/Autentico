@@ -6,7 +6,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /*Vendor and Custom Modules */
-//import { NgxPaginationModule } from "ngx-pagination";
 import { AppRoutingModule } from "./app.router.module";
 
 /* Components Loading */
