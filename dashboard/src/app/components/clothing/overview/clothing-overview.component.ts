@@ -6,7 +6,7 @@ import { ClothingService } from '../clothing.service';
 @Component({
   selector: 'ad-clothing-overview',
   templateUrl: './clothing-overview.component.html',
-  styleUrls: ['./clothing-overview.component.css']
+  styleUrls: ['./clothing-overview.component.scss']
 })
 export class ClothingOverviewComponent extends ResourceComponent<Clothing, ClothingService> {
 

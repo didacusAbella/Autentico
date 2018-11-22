@@ -5,7 +5,7 @@ import { Color } from "../color";
 
 @Component({
   templateUrl: './color-detail.component.html',
-  styleUrls: ['./color-detail.component.css']
+  styleUrls: ['./color-detail.component.scss']
 })
 export class ColorDetailComponent implements OnInit {
 

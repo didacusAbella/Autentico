@@ -5,8 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ad-clothing-detail',
-  templateUrl: './clothing-detail.component.html',
-  styleUrls: ['./clothing-detail.component.css']
+  templateUrl: './clothing-detail.component.html'
 })
 export class ClothingDetailComponent implements OnInit{
 
