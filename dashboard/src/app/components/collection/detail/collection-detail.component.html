@@ -21,8 +21,7 @@
       </fieldset>
       <label>Anno
         <select [(ngModel)]="collection.year" [value]="collection.year">
-          <option *ngFor="let year of generateYears()" 
-          [value]="year" >{{year}}</option>
+          <option *ngFor="let year of generateYears()" [value]="year" >{{year}}</option>
         </select>
       </label>
       <div class="button-group">
