@@ -5,7 +5,7 @@ import { ColorsService } from '../color.service';
 @Component({
   selector: 'ad-color-overview',
   templateUrl: './color-overview.component.html',
-  styleUrls: ['./color-overview.component.css']
+  styleUrls: ['./color-overview.component.scss']
 })
 export class ColorOverviewComponent {
   

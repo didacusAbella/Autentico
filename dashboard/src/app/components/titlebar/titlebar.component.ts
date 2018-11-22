@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'ad-titlebar',
   templateUrl: './titlebar.component.html',
-  styleUrls: ['./titlebar.component.css']
+  styleUrls: ['./titlebar.component.scss']
 })
 export class TitlebarComponent {
 

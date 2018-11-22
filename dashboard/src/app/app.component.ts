@@ -3,8 +3,7 @@ declare var $ :any;
 
 @Component({
   selector: 'ad-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
 

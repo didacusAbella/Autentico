@@ -5,8 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'ad-brand-overview',
-  templateUrl: './brand-detail.component.html',
-  styleUrls: ['./brand-detail.component.css']
+  templateUrl: './brand-detail.component.html'
 })
 export class BrandDetailComponent implements OnInit {
   

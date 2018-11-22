@@ -52,3 +52,12 @@
 // Helpers
 @include foundation-float-classes;
 @include foundation-visibility-classes;
+
+/*Custom Styles*/
+.input-error {
+  small {
+    font-weight: $input-error-font-weight;
+    font-size: $input-error-font-size;
+    color: $form-label-color-invalid;
+  }
+}
