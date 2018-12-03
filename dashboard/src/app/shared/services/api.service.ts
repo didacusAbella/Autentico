@@ -29,12 +29,12 @@ export class ApiService<T> {
     return this.endpoint.get<T>(`${this.fullApi}/${id}`);
   }
 
-  public update(item :T, id :number) :Observable<T> {
-    return this.endpoint.put<T>(`${this.fullApi}/${id}`, item);
+  public update(item :T, id :number) :Observable<Number> {
+    return this.endpoint.put<Number>(`${this.fullApi}/${id}`, item);
   }
 
-  public delete(id :number) :Observable<T> {
-    return this.endpoint.delete<T>(`${this.fullApi}/${id}`);
+  public delete(id :number) :Observable<Number> {
+    return this.endpoint.delete<Number>(`${this.fullApi}/${id}`);
   } 
 
 }
