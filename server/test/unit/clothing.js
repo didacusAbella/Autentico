@@ -2,6 +2,8 @@
 const chai = require('chai');
 const chai_http = require('chai-http');
 const app = require("../../server");
+let Clothing = require('../../api/clothing/controller');
+
 /*Setup some objects */
 const expect = chai.expect;
 chai.use(chai_http);
@@ -19,3 +21,18 @@ describe('Describe Clothing API', function(){
     });
   });
 }); 
+
+
+/*Create test suite */
+describe('id Clothing ', function(){
+  this.timeout(5000);
+  it('return id of the clothing', function(){
+    return chai.request(app)
+    .get('/clothings')
+    .then(function(res){
+     Clothing.findClothingById("A005");
+       
+    });
+  });
+}); 
+
