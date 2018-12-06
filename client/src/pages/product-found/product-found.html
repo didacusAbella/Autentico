@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>Product Found</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="test()" class="my-style-for-modal">
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/dg.png">
+      </ion-avatar>
+      <ion-card-title style="text-align:left;">
+          Dolce & Gabbana
+        </ion-card-title>
+    </ion-item>
+
+    <img class="scaleImg" src="assets/imgs/jeans.png">
+  </ion-card>
+  <div>
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title style="text-align:center;">
+          Info
+        </ion-card-title>
+        <p>
+          Capo d'abbigliamento: Jeans <br>
+          Colore: Blu <br>
+          Descrizione: Jeans 100% cotone <br>
+          Collezione: Primavera Estate 2017 <br>
+          Difetti: No <br>
+          Qualità: Alta<br>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <button class="centerButton" ion-button full round small (click)="nextScanner()">Scannerizza nuovo prodotto</button>
+
+</ion-content>

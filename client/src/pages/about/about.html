@@ -1,11 +1,44 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      About us
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <div class="Title">
+    <h2>Autentico</h2>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <div class="Title">
+        <h1>Chi siamo</h1>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
 
+      <p>Developed by:<br> Diego Avella, Giammaria Giordano, Valeria Pontillo <img src="assets/imgs/angry.jpg" style="width: 50px; height: 50px;">
+        <br>Supervised by:<br>
+        Nexsoft S.p.A <img src="assets/imgs/nexsoft.jpg" style="width: 50px; height: 50px;"><br>
+        Prof.ssa Rita Francese<br>
+      </p>
+      <br>
+      <p> Se questa applicazione ti è piaciuta non dimenticati di condividerla!</p>
+   
+        <button class="circle" ion-button small round (click)="sharefb()">
+          <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+        </button>
+        <button class="circle" ion-button small round (click)="shareTwitter()">
+          <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
+        </button>
+      <p (click)="sendMail()"> <span class="textStyle"> premi per segnalare un problema </span></p><br>
+      <div class="left">
+        Version 0.1
+        <div class="right">
+          Copyright © Inc. all rights reserved
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
