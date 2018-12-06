@@ -11,7 +11,7 @@ export class AboutPage {
     msg:string;
     linkToApp:string;
   constructor(public navCtrl: NavController,private emailComposer: EmailComposer,private socialSharing: SocialSharing) {
-     this.msg="Ho trovato l\'applicazione @utentico davvero ottima, serve a riconoscere capi firmati!"
+     this.msg="Ho trovato l\'applicazione Autentico davvero ottima, serve a riconoscere capi firmati!"
      this.linkToApp="https://www.linkToApp.com";
   } 
 

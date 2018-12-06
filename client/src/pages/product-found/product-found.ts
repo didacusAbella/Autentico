@@ -25,7 +25,7 @@ export class ProductFoundPage {
   nextScanner(){
     this.navCtrl.setRoot(TabsPage, {opentab: 1});
   }
-  test(){
+  backArrow(){
     this.navCtrl.setRoot(TabsPage, {opentab: 0});
   }
 }

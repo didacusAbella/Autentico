@@ -14,7 +14,7 @@ import { ProductFoundPage } from '../pages/product-found/product-found';
 import { Dialogs } from '@ionic-native/dialogs';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { SocialSharing } from '@ionic-native/social-sharing';
-
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     Dialogs,
     EmailComposer,
     SocialSharing,
+    BackgroundMode,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -22,7 +22,7 @@ export class CodeStringPage {
       this.navCtrl.setRoot(ProductFoundPage, {}, { animate: false });
     }
     else {
-      this.dialogs.alert('Prodotto non trovato. Il capo non risulta presente all\'interno dei nostri archivi','Prodotto non trovato')
+      this.dialogs.alert('Prodotto non trovato. Il capo potrebbe essere contraffatto!','Prodotto non trovato')
         .then(() => console.log('Dialog dismissed'))
         .catch(e => console.log('Error displaying dialog', e));
     }

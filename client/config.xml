@@ -86,5 +86,6 @@
     <plugin name="cordova-plugin-x-socialsharing" spec="5.4.1" />
     <allow-navigation href="http://172.19.50.119:8100" />
     <plugin name="cordova-plugin-email-composer" spec="0.8.15" />
+    <plugin name="cordova-plugin-background-mode" spec="0.7.2" />
     <engine name="android" spec="7.1.1" />
 </widget>

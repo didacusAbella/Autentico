@@ -1,7 +1,7 @@
 {
-  "name": "tab2",
+  "name": "Autentico",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Angry Nerds",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -20,6 +20,7 @@
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/background-mode": "^4.18.0",
     "@ionic-native/core": "~4.15.0",
     "@ionic-native/dialogs": "^4.17.0",
     "@ionic-native/email-composer": "^4.18.0",
@@ -28,6 +29,7 @@
     "@ionic-native/status-bar": "~4.15.0",
     "@ionic/storage": "2.2.0",
     "cordova-android": "7.1.1",
+    "cordova-plugin-background-mode": "0.7.2",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-dialogs": "2.0.1",
     "cordova-plugin-email-composer": "0.8.15",
@@ -50,7 +52,7 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.2.0",
+    "@ionic/app-scripts": "^3.2.1",
     "typescript": "~2.6.2"
   },
   "description": "An Ionic project",
@@ -66,7 +68,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-dialogs": {},
       "cordova-plugin-email-composer": {},
-      "cordova-plugin-x-socialsharing": {}
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-plugin-background-mode": {}
     },
     "platforms": [
       "android"
