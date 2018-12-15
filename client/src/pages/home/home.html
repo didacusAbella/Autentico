@@ -5,13 +5,73 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div class="Title">
+    <h1>Brands supportati</h1>
+  </div>
+
+  <div cards>
+    <div class="grid-full">
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <img class="resize" src="assets/imgs/dg.png">
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <img class="resize" src="assets/imgs/gucci.png">
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <img class="resize" src="assets/imgs/dg.png">
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <img class="resize" src="assets/imgs/dg.png">
+          </ion-card>
+        </ion-col>
+        </ion-row>
+        </div>
+  </div>
+  
+<div *ngIf=hideDiv>
+  <div cards>
+    <div class="grid-full">
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <img class="resize" src="assets/imgs/dg.png">
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <img class="resize" src="assets/imgs/gucci.png">
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <img class="resize" src="assets/imgs/dg.png">
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <img class="resize" src="assets/imgs/dg.png">
+          </ion-card>
+        </ion-col>
+        </ion-row>
+        </div>
+  </div>
+</div>
+
+  <div class="Title">
+    <button ion-button full round small (click)="hide()" >{{mtn_txt}}</button>
+  </div>
 </ion-content>

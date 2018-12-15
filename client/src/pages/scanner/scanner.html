@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Verifica capo
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+        <div>
+          <ion-card>
+            <img class="imgCustomNFC" src="assets/imgs/nfc screen NFC.png">
+            <ion-card-content>
+              <ion-card-title>
+               Scannerizza codice tramite NFC
+              </ion-card-title>
+              <p align="justify">
+                Con il pulsante "Scannerizza codice" potrai scannerizzare un capo tramite il lettore NFC.<br>
+                Ricorda di attivare l'NFC prime di cominciare la scansione.<br>
+                Con il pulsante "Inserisci codice" dovrai inserire manualmente il codice del capo d'abbigliamento.
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+      <button class="customButton" ion-button full round small (click)="scannerFunction()">Scannerizza codice</button>
+    </ion-row>
+      <ion-row padding-top>    
+      <button class="customButton" ion-button full round small (click)="goAnOtherPage()">Inserisci codice</button>
+    </ion-row>
+  </ion-col>
+  </ion-grid>
+</ion-content>

@@ -3,21 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { ScannerPage } from '../pages/scanner/scanner';
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { CodeStringPage } from '../pages/code-string/code-string';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProductFoundPage } from '../pages/product-found/product-found';
+import { Dialogs } from '@ionic-native/dialogs';
+import { EmailComposer } from '@ionic-native/email-composer';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 @NgModule({
   declarations: [
     MyApp,
+    ScannerPage,
     AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    CodeStringPage,
+    ProductFoundPage
   ],
   imports: [
     BrowserModule,
@@ -26,14 +33,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    ScannerPage,
     AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    CodeStringPage,
+    ProductFoundPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Dialogs,
+    EmailComposer,
+    SocialSharing,
+    BackgroundMode,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
