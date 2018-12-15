@@ -1,5 +1,5 @@
-let Clothing = require('./model');
-let ResponseFactory = require('../core/responsefactory');
+let Clothing = require('../models/clothing');
+let ResponseFactory = require('../helpers/responsefactory');
 
 /**
  * Controller for Clothing model

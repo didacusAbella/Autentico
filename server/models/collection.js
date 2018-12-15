@@ -1,10 +1,6 @@
-let db = require('../../database/index');
+const db = require('../database/index');
 
-/**
- * Collection table
- * 
- */
-let Collection = db.define('collections', {
+const Collection = db.define('collections', {
   id: {
     type: db.Sequelize.INTEGER,
     field: 'id',
@@ -17,7 +13,7 @@ let Collection = db.define('collections', {
   year: {
     type: db.Sequelize.STRING(9),
     field: 'year'
-  },
-})
+  }
+});
 
 module.exports = Collection;

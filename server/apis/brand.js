@@ -1,7 +1,7 @@
 let express = require('express');
-let BrandController = require('./controller');
-let validateRequest = require('../core/utils');
-let BrandRules = require('./rules');
+let BrandController = require('../controllers/brand');
+let validateRequest = require('../helpers/validator');
+let BrandRules = require('../rules/brand');
 let router = express.Router();
 let brandController = new BrandController();
 

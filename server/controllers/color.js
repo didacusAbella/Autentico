@@ -1,5 +1,5 @@
-let Color = require('./model');
-let ResponseFactory = require('../core/responsefactory');
+let Color = require('../models/color');
+let ResponseFactory = require('../helpers/responsefactory');
 
 /**
  * Controller for Color model

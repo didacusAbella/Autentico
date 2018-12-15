@@ -1,5 +1,5 @@
-let Brand = require('./model');
-let ResponseFactory = require('../core/responsefactory');
+let Brand = require('../models/brand');
+let ResponseFactory = require('../helpers/responsefactory');
 
 /**
  * Controller for Brand Resources

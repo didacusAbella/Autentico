@@ -1,10 +1,10 @@
-let db = require('../../database/index');
+const db = require('../database/index');
 
 /**
  * Create Brand table
  * TODO need to add validation rules
  */
-let Brand = db.define('brands', {
+const Brand = db.define('brands', {
   id: {
     type: db.Sequelize.INTEGER,
     field: 'id',
@@ -14,6 +14,6 @@ let Brand = db.define('brands', {
     type: db.Sequelize.STRING(20),
     field: 'name'
   }
-})
+});
 
 module.exports = Brand;

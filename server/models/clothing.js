@@ -1,10 +1,6 @@
-let db = require('../../database/index');
+const db = require('../database/index');
 
-/**
- * Create Clothing table
- * 
- */
-let Clothing = db.define('clothing', {
+const Clothing = db.define('clothing', {
   id: {
     type: db.Sequelize.STRING(4),
     field: 'id',

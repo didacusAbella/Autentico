@@ -1,10 +1,6 @@
-let db = require('../../database/index');
+const db = require('../database/index');
 
-/**
- * Create Color table
- * TODO need to add validation rules
- */
-let Color = db.define('Color', {
+const Color = db.define('Color', {
   id: {
     type: db.Sequelize.INTEGER,
     field: 'id',
@@ -14,6 +10,6 @@ let Color = db.define('Color', {
     type: db.Sequelize.STRING(6),
     field: 'hex'
   }
-})
+});
 
 module.exports = Color;

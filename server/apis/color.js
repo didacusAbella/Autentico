@@ -1,7 +1,7 @@
 let express = require('express');
-let ColorController = require('./controller');
-let validateRequest = require('../core/utils');
-let ColorRules = require('./rules');
+let ColorController = require('../controllers/color');
+let validateRequest = require('../helpers/validator');
+let ColorRules = require('../rules/color');
 let router = express.Router();
 let colorController = new ColorController();
 

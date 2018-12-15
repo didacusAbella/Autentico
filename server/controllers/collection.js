@@ -1,5 +1,5 @@
-let Collection = require('./model');
-let ResponseFactory = require('../core/responsefactory');
+let Collection = require('../models/collection');
+let ResponseFactory = require('../helpers/responsefactory');
 
 /**
  * Controller for Collection model

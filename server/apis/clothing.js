@@ -1,7 +1,7 @@
 let express = require('express');
-let ClothingController = require('./controller');
-let validateRequest = require('../core/utils');
-let ClothingRules = require('./rules');
+let ClothingController = require('../controllers/clothing');
+let validateRequest = require('../helpers/validator');
+let ClothingRules = require('../rules/clothing');
 let router = express.Router();
 let clothingController = new ClothingController();
 /**

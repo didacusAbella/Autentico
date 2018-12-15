@@ -1,7 +1,7 @@
 let express = require('express');
-let CollectionController = require('./controller');
-let validateRequest = require('../core/utils');
-let CollectionRules = require('./rules');
+let CollectionController = require('../controllers/collection');
+let validateRequest = require('../helpers/validator');
+let CollectionRules = require('../rules/collection');
 let router = express.Router();
 let collectionController = new CollectionController();
 

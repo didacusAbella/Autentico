@@ -4,12 +4,12 @@
 let express = require('express');
 let app = express();
 let API = require('./config/api');
-
+require('./models/index');
 /* Setup router api*/
-let clothingApi   = require('./api/clothing/api');
-let colorApi      = require('./api/color/api');
-let collectionApi = require('./api/collection/api');
-let brandApi      = require('./api/brand/api');
+let clothingApi   = require('./apis/clothing');
+let colorApi      = require('./apis/color');
+let collectionApi = require('./apis/collection');
+let brandApi      = require('./apis/brand');
 
 app.use(function(req, res, next){
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
@@ -30,5 +30,6 @@ app.use('/brands',brandApi);
 app.listen(API.port, API.host, function(req, res){
   console.log(`Authentic Service version:${API.version} is listening on ${API.host}:${API.port}`);
 });
+
 
 module.exports = app;
