@@ -1,0 +1,22 @@
+<article id="info">
+  <section id="stakeholders" class="p-grid">
+    <p-panel class="p-col-6" header="Ecco chi ha contribuito alla realizzazione del progetto Autentico">
+      <div *ngFor="let stakeholder of stakeholders">
+        <p-card class="p-col-3" [header]="stakeholder.name">
+          {{ stakeholder.role }}
+        </p-card>
+      </div>
+    </p-panel>
+    <form class="p-col-6 p-grid" name="sendEmail" [formGroup]="emailForm">
+      <p-fieldset legend="Manda un Email per Supporto" class="p-col-12">
+        <span class="ui-float-label">
+          <input id="from" type="text" pInputText class="p-col-12" formControlName="from">
+          <label for="from">Email</label>
+        </span>
+          <p-chips class="p-col-12" max="3" allowDuplicate="false" placeholder="Destinatari" formControlName="to"></p-chips>
+        <textarea id="content" pInputTextArea class="p-col-12" [rows]="20" placeholder="Contenuto" formControlName="content"></textarea>
+        <button type="submit" pButton label="Spedisci" class="p-col-4"></button>
+      </p-fieldset>
+    </form>
+  </section>
+</article>

@@ -1,30 +1,26 @@
-/*Core Modules */
-import { BrowserModule } from '@angular/platform-browser';
+/*Angular core modules*/
+import { BrowserModule} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from "@angular/http";
-import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-/*Vendor and Custom Modules */
-import { AppRoutingModule } from "./app.router.module";
-
-/* Components Loading */
+/*Primeng modules*/
+import { MenubarModule } from "primeng/menubar";
+/*App modules */
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TitlebarComponent } from './components/titlebar/titlebar.component';
-import { MenuComponent } from './components/menu/menu.component';
+/* Custom components */
+import {TitlebarComponent} from "./components/titlebar/titlebar.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TitlebarComponent,
-    MenuComponent
+    TitlebarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
-    HttpModule
+    MenubarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

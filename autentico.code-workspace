@@ -4,10 +4,10 @@
 			"path": "client"
 		},
 		{
-			"path": "dashboard"
+			"path": "server"
 		},
 		{
-			"path": "server"
+			"path": "dashboard"
 		}
 	]
 }
