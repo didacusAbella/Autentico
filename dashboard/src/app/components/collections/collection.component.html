@@ -1,0 +1,25 @@
+<section class="p-grid p-justify-center" id="list-collection">
+  <p-virtualScroller [value]="collections" [itemSize]="250" class="p-col-6" scrollHeight="400px">
+    <p-header>
+      Lista delle Collezioni
+    </p-header>
+    <ng-template let-collection pTemplate="item">
+      <section class="p-grid">
+        <div class="p-col-6">
+          <img src="assets/collezione.png" width="200px" height="200px" alt="immagine collezione" />
+        </div>
+        <div class="p-col-6">
+         <h4>Id: {{ collection.id }}</h4>
+         <h4>Stagione: {{ collection.season }}</h4>
+         <h4>Anno: {{ collection.year }}</h4>
+         <p>
+           <button pButton label="Modifica" icon="pi pi-pencil"></button>
+         </p>
+         <p>
+           <button pButton label="Elimina" icon="pi pi-trash"></button>
+         </p>
+        </div>
+      </section>
+    </ng-template>
+  </p-virtualScroller>
+</section>

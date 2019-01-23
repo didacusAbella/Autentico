@@ -2464,8 +2464,8 @@ body {
 	}
 	.ui-virtualscroller {
 		.ui-virtualscroller-header {
-			background-color: $wild_sand;
-			color: $color_mine_shaft_approx;
+			background-color: $color_lochmara_approx;
+			color: $white;
 			border: 1px solid $color_pumice_approx;
 			padding: 0.571em 1em;
 			font-weight: 400;
@@ -2474,14 +2474,14 @@ body {
 		.ui-virtualscroller-content {
 			border: 1px solid $color_pumice_approx;
 			background-color: $white;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			.ui-virtualscroller-list li {
 				border-bottom: 1px solid $color_pumice_approx;
 			}
 		}
 		.ui-virtualscroller-footer {
 			background-color: $white;
-			color: $color_mine_shaft_approx;
+			color: $pure-black;
 			border: 1px solid $color_pumice_approx;
 			padding: 0.571em 1em;
 			border-top: 0 none;
