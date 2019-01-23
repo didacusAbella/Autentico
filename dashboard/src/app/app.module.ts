@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 /* Custom components */
 import {TitlebarComponent} from "./components/titlebar/titlebar.component";
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {TitlebarComponent} from "./components/titlebar/titlebar.component";
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     MenubarModule
   ],
   providers: [],
