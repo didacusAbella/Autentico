@@ -16,18 +16,20 @@ import { ButtonModule } from 'primeng/button';
 import { BrandDetailComponent } from './detail/branddetail.component';
 import { BrandsComponent } from "./brand.component";
 import { BrandService } from './brand.service';
+import { BrandFormComponent } from './form/brandform.component';
 
 
 
 const BRAND_ROUTES: Routes = [
   { path: 'brands', children: [
     { path: '', component: BrandsComponent},
-    { path: ':id', component: BrandDetailComponent}
+    { path: 'newBrand', component: BrandFormComponent },
+    { path: ':id', component: BrandDetailComponent},
   ]}
 ]
 
 @NgModule({
-  declarations: [BrandsComponent, BrandDetailComponent],
+  declarations: [BrandsComponent, BrandDetailComponent, BrandFormComponent],
   imports: [CommonModule, TableModule, SplitButtonModule, 
     ConfirmDialogModule, FieldsetModule, SpinnerModule, 
     InputTextModule, ButtonModule, ReactiveFormsModule, RouterModule.forChild(BRAND_ROUTES)],
