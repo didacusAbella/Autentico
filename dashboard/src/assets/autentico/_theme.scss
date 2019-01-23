@@ -1731,7 +1731,7 @@ body {
 		.ui-fieldset-legend a {
 			padding: 0.571em 1em;
 			border: 1px solid $color_pumice_approx;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			background-color: $wild_sand;
 			-moz-border-radius: 3px;
 			-webkit-border-radius: 3px;
@@ -1747,7 +1747,7 @@ body {
 				display: inline-block;
 				vertical-align: middle;
 				margin-right: 0.5em;
-				color: $color_gunsmoke_approx;
+				color: $pure_black;
 			}
 			.ui-fieldset-legend-text {
 				padding: 0;
@@ -1756,9 +1756,9 @@ body {
 		&.ui-fieldset-toggleable .ui-fieldset-legend a:hover {
 			background-color: $alto;
 			border: 1px solid $alto;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			.ui-fieldset-toggler {
-				color: $color_mine_shaft_approx;
+				color: $pure_black;
 			}
 		}
 	}

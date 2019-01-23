@@ -1,0 +1,15 @@
+<section class="p-grid p-justify-center">
+  <form class="p-col-6" [formGroup]="editBrandForm" *ngIf="selectedBrand; else loading">
+    <p-fieldset legend="Modifica dati">
+      <p-spinner [disabled]="true" formControlName="id"></p-spinner>
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">Nome</span>
+        <input id="brandName" type="text" size="30" pInputText formControlName="name" placeholder="Modifica Nome">
+      </div>
+      <button pButton label="Modifica" type="submit" (click)="editBrand"></button>
+    </p-fieldset>
+  </form>
+</section>
+<ng-template #loading>
+  <i class="pi pi-spin pi-spinner" style="font-size: 3em"></i>
+</ng-template>
