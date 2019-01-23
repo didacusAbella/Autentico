@@ -20,7 +20,7 @@ export class BrandsComponent implements OnInit {
     })
   }
 
-  public deleteBrand(id: number): any{
+  public deleteBrand(id: number): any {
     this.confirmService.confirm({
       header: "Conferma Eliminazione",
       message: "Sei sicuro di voler eliminare il brand"+id,
