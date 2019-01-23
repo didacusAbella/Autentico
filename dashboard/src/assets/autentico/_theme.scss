@@ -2330,11 +2330,11 @@ body {
 			border: 1px solid $color_pumice_approx;
 			font-weight: 700;
 			color: $color_mine_shaft_approx;
-			background-color: $wild_sand;
+			background-color: $color_lochmara_approx;
 		}
 		.ui-table-tbody > tr {
 			background: $white;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			> td {
 				padding: 0.571em 0.857em;
 				background: inherit;
@@ -2816,7 +2816,7 @@ body {
 		padding: 0;
 		.ui-carousel-header {
 			background-color: $wild_sand;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			padding: 0.571em 1em;
 			border: 1px solid $color_pumice_approx;
 			margin: 0;
@@ -2828,7 +2828,7 @@ body {
 		.ui-carousel-viewport {
 			border: 1px solid $color_pumice_approx;
 			background-color: $white;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			padding: 0;
 			.ui-carousel-items .ui-carousel-item {
 				border: 1px solid $color_pumice_approx;
@@ -3195,8 +3195,8 @@ body {
 		box-shadow: 0 0 6px 0 $black_16;
 		.ui-dialog-titlebar {
 			border: 1px solid $color_pumice_approx;
-			background-color: $wild_sand;
-			color: $color_mine_shaft_approx;
+			background-color: $color_lochmara_approx;
+			color: $white;
 			padding: 1em;
 			font-weight: 400;
 			border-bottom: 0 none;
@@ -3205,7 +3205,7 @@ body {
 				float: none;
 			}
 			.ui-dialog-titlebar-icon {
-				color: $color_gunsmoke_approx;
+				color: $white;
 				border: 0 none;
 				padding: 0;
 				margin-left: 0.5em;
@@ -3221,14 +3221,14 @@ body {
 		}
 		.ui-dialog-content {
 			background-color: $white;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			border: 1px solid $color_pumice_approx;
 			padding: 0.571em 1em;
 		}
 		.ui-dialog-footer {
 			border: 1px solid $color_pumice_approx;
 			background-color: $white;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			padding: 0.571em 1em;
 			margin: 0;
 			text-align: right;
@@ -3454,7 +3454,7 @@ body {
 	}
 	.ui-menu {
 		padding: 0;
-		background-color: $white;
+		background-color: $color_pumice_approx;
 		border: 1px solid $color_pumice_approx;
 		.ui-menuitem-link {
 			padding: 0.714em 0.857em;
