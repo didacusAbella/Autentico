@@ -1,0 +1,8 @@
+<section class="p-grid">
+  <form [formGroup]="createBrandForm" class="p-col-6">
+    <p-fieldset legend="Crea Nuovo Brand">
+      <input pInputText placeholder="Nuovo Brand" formControlName="name">
+      <button pButton label="Crea Nuovo Brand" (click)="createBrand"></button>  
+    </p-fieldset>
+  </form>
+</section>
