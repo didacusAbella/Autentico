@@ -17,7 +17,7 @@ export class InfoComponent implements OnInit {
       new StakeHolder("Giammaria Giordano", "Studente di SITS. Responsabile sviluppo e creazione dell'Applicazione Autentico"),
       new StakeHolder("Valeria Pontillo", "Studente di SITS Responsabile coordinamento e costruzione di tutte le componenti di Autentico"),
       new StakeHolder("Diego Avella", "Studente di SITS. Responsabile Realizzazione Dashboard"),
-      new StakeHolder("Monica Rinaldi", "Responsabile per il coordinamento degli studenti per il design dell'applicazione"),
+      new StakeHolder("Marica Rinaldi", "Responsabile per il coordinamento degli studenti per il design dell'applicazione"),
       new StakeHolder("NexSoft S.P.A", "Sponsor del Progetto"),
       new StakeHolder("Mariarita Francese", "Docente presso l'Università degli studi di Salerno. Responsabile coordinamento studenti")
     ];

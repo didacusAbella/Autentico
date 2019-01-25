@@ -1,2 +1,14 @@
 @import "./assets/autentico/variables";
 @import "./assets/autentico/theme";
+
+.container {
+  background-image: url("./assets/armadio.jpg");
+  background-repeat: none;
+  background-size: cover;
+  z-index: -1;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}

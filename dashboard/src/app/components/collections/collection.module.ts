@@ -7,17 +7,24 @@ import { CollectionComponent } from './collection.component';
 import { CollectionService } from './collection.service';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { ButtonModule } from "primeng/button";
+import { InputMaskModule } from 'primeng/inputmask';
+import { SpinnerModule } from 'primeng/spinner';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { FieldsetModule } from "primeng/fieldset";
+import { CollectionDetailComponent } from './detail/collectiondetail.component';
 
 const COLLECTION_ROUTES: Routes = [
   {path: 'collections', children: [
-    { path: '', component: CollectionComponent }
+    { path: '', component: CollectionComponent },
+    { path: ':id', component: CollectionDetailComponent }
   ]}
 ];
 
 @NgModule({
-  declarations: [CollectionComponent],
+  declarations: [CollectionComponent, CollectionDetailComponent],
   imports: [CommonModule, VirtualScrollerModule, ButtonModule,
-    RouterModule.forChild(COLLECTION_ROUTES)],
+    InputMaskModule, SpinnerModule, SelectButtonModule, ReactiveFormsModule,
+    FieldsetModule, RouterModule.forChild(COLLECTION_ROUTES)],
   exports: [RouterModule],
   providers: [CollectionService]
 })
