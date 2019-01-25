@@ -12,16 +12,18 @@ import { SpinnerModule } from 'primeng/spinner';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FieldsetModule } from "primeng/fieldset";
 import { CollectionDetailComponent } from './detail/collectiondetail.component';
+import { CollectionFormComponent } from './form/collectionform.component';
 
 const COLLECTION_ROUTES: Routes = [
   {path: 'collections', children: [
     { path: '', component: CollectionComponent },
+    { path: 'newCollection', component: CollectionFormComponent},
     { path: ':id', component: CollectionDetailComponent }
   ]}
 ];
 
 @NgModule({
-  declarations: [CollectionComponent, CollectionDetailComponent],
+  declarations: [CollectionComponent, CollectionDetailComponent, CollectionFormComponent],
   imports: [CommonModule, VirtualScrollerModule, ButtonModule,
     InputMaskModule, SpinnerModule, SelectButtonModule, ReactiveFormsModule,
     FieldsetModule, RouterModule.forChild(COLLECTION_ROUTES)],

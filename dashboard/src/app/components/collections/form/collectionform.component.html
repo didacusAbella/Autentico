@@ -1,0 +1,15 @@
+<section class="p-grid">
+  <p-fieldset legend="Crea Nuona Collezione" class="p-col-6">
+      <form [formGroup]="collectionForm">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">Stagione</span>
+            <p-selectButton formControlName="season" [options]="seasons" optionLabel="name"></p-selectButton>
+          </div>
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">Anno</span>
+            <p-inputMask formControlName="year" mask="9999/9999"></p-inputMask>
+          </div>
+          <button type="submit" pButton label="Crea Collezione"></button>
+        </form>
+  </p-fieldset>
+</section>

@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
         label: 'Modifica', icon: 'pi pi-pencil', items: [
           { label: 'Inserisci Capo', routerLink: '', icon: 'pi pi-plus'},
           { label: 'Inserisci Colore', routerLink: '', icon: 'pi pi-plus'},
-          { label: 'Inserisci Collezione', routerLink: '', icon: 'pi pi-plus'},
+          { label: 'Inserisci Collezione', routerLink: './collections/newCollection', icon: 'pi pi-plus'},
           { label: 'Inserisci Brand', routerLink: './brands/newBrand', icon: 'pi pi-plus'}
         ]
       },
