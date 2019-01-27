@@ -1,0 +1,23 @@
+<section class="p-grid p-justify-center">
+  <p-table [value]="colors" class="p-col-8" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Id</th>
+        <th>Colore</th>
+        <th>Azioni</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-color>
+      <tr>
+        <td>{{ color.id }}</td>
+        <td>
+          <div class="preview" [style.background]="color.hex"></div>
+        </td>
+        <td>
+          <button label="Modifica" icon="pi pi-pencil" [routerLink]="['./', color.id]" pButton></button>
+          <button label="Elimina" icon="pi pi-trash" pButton></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</section>

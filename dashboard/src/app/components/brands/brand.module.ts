@@ -5,7 +5,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { ReactiveFormsModule } from '@angular/forms';
 /* Prime NG odules */
 import { FieldsetModule } from 'primeng/fieldset';
-import { TableModule } from 'primeng/table';
+import { OrderListModule } from 'primeng/orderlist';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
@@ -30,8 +30,8 @@ const BRAND_ROUTES: Routes = [
 
 @NgModule({
   declarations: [BrandsComponent, BrandDetailComponent, BrandFormComponent],
-  imports: [CommonModule, TableModule, SplitButtonModule, 
-    ConfirmDialogModule, FieldsetModule, SpinnerModule, 
+  imports: [CommonModule, SplitButtonModule, ConfirmDialogModule, 
+    FieldsetModule, SpinnerModule, OrderListModule, 
     InputTextModule, ButtonModule, ReactiveFormsModule, RouterModule.forChild(BRAND_ROUTES)],
   exports: [RouterModule],
   providers: [BrandService, ConfirmationService]
