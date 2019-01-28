@@ -26,10 +26,10 @@ export class AppComponent implements OnInit {
       },
       {
         label: 'Visualizza', icon: 'pi pi-eye', items: [
-          { label: 'Capi', routerLink: 'clothings'},
-          { label: 'Brand', routerLink: 'brands'},
-          { label: 'Collezioni', routerLink: 'collections'},
-          { label: 'Colori', routerLink: 'colors'}
+          { label: 'Capi', routerLink: 'clothings', icon: "pi pi-info-circle"},
+          { label: 'Brand', routerLink: 'brands', icon: "pi pi-info-circle"},
+          { label: 'Collezioni', routerLink: 'collections', icon: "pi pi-info-circle"},
+          { label: 'Colori', routerLink: 'colors', icon: "pi pi-info-circle"}
         ]
       },
       { label: 'Info', icon: 'pi pi-info', routerLink: 'info'}

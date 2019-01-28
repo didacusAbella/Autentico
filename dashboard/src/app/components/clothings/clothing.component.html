@@ -1,0 +1,54 @@
+<section class="p-grid p-justify-center">
+  <article class="p-col-8">
+    <p-dataView [value]="clothings" filterBy="name" [paginator]="true" [rows]="10" #dv>
+      <p-header>
+        <div class="p-grid p-align-center">
+          <div class="p-col">
+            <h3>Lista Capi d'Abbigliamento</h3>
+          </div>
+          <div class="p-col">
+              <input type="search" pInputText placeholder="Cerca" (keyup)="dv.filter($event.target.value)">
+          </div>
+          <div class="p-col">
+              <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+          </div>
+        </div>
+      </p-header>
+      <ng-template let-clothing pTemplate="listItem">
+        <div class="p-grid p-align-center">
+          <div class="p-col">
+            <img src="../../../assets/cloth.png" alt="cloth image" width="100px" height="100px"/>
+          </div>
+          <div class="p-col">
+            <h4>{{ clothing.id }}</h4>
+          </div>
+          <div class="p-col">
+            {{ clothing.name }}
+          </div>
+          <div class="p-col">
+            <p-splitButton label="Dettagli" icon="pi pi-ellipsis-h" (onClick)="showDetail(clothing.id)" [model]="loadOptions(clothing.id)"></p-splitButton>
+          </div>
+        </div>
+      </ng-template>
+      <p-footer>
+        <p-dialog header="Dettagli" [(visible)]="display" [responsive]="true" [style]="{width: '225px'}" *ngIf="detailedClothing">
+          <div class="p-grid">
+            <div class="p-col-12">
+                <img src="../../../assets/cloth.png" alt="cloth image" width="100px" height="100px"/>
+            </div>
+            <div class="p-col-12">
+              <dl class="detailedList">
+                <dt>Nome</dt>
+                <dd>{{ detailedClothing.name }}</dd>
+                <dt>ID</dt>
+                <dd>{{ detailedClothing.id }}</dd>
+                <dt>Difettoso</dt>
+                <dd>{{ detailedClothing.defect ? 'Sì' : 'No'}}</dd>
+              </dl>
+            </div>
+          </div>
+        </p-dialog>
+      </p-footer>
+    </p-dataView>
+  </article>
+</section>
