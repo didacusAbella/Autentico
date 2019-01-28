@@ -1,0 +1,9 @@
+.detailedList {
+  dt {
+    font-weight: 700;
+    + dd {
+      font-style: italic;
+      font-weight: 400;
+    }
+  } 
+}

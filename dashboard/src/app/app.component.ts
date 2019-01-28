@@ -20,17 +20,16 @@ export class AppComponent implements OnInit {
       {
         label: 'Modifica', icon: 'pi pi-pencil', items: [
           { label: 'Inserisci Capo', routerLink: '', icon: 'pi pi-plus'},
-          { label: 'Inserisci Colore', routerLink: '', icon: 'pi pi-plus'},
           { label: 'Inserisci Collezione', routerLink: './collections/newCollection', icon: 'pi pi-plus'},
           { label: 'Inserisci Brand', routerLink: './brands/newBrand', icon: 'pi pi-plus'}
         ]
       },
       {
         label: 'Visualizza', icon: 'pi pi-eye', items: [
-          { label: 'Capi', routerLink: 'clothings'},
-          { label: 'Brand', routerLink: 'brands'},
-          { label: 'Collezioni', routerLink: 'collections'},
-          { label: 'Colori', routerLink: 'colors'}
+          { label: 'Capi', routerLink: 'clothings', icon: "pi pi-info-circle"},
+          { label: 'Brand', routerLink: 'brands', icon: "pi pi-info-circle"},
+          { label: 'Collezioni', routerLink: 'collections', icon: "pi pi-info-circle"},
+          { label: 'Colori', routerLink: 'colors', icon: "pi pi-info-circle"}
         ]
       },
       { label: 'Info', icon: 'pi pi-info', routerLink: 'info'}

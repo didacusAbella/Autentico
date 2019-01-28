@@ -1,26 +1,20 @@
 <section class="p-grid p-justify-center">
-  <div class="p-col-12" id="brand-wrapper">
-    <h3 id="brand-title">Gestione Brand</h3>
+  <div id="brand-list" class="p-col-8">
     <p-confirmDialog [style]="{width: '425px'}"></p-confirmDialog>
-  </div>
-  <div class="p-col-6">
-    <p-table [value]="brands" [paginator]="true" [rows]="10" [responsive]="true" [rowHover]="true" [autoLayout]="true">
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Id</th>
-          <th>Nome</th>
-          <th>Azioni</th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-brand>
-        <tr>
-          <td>{{ brand.id }}</td>
-          <td>{{ brand.name }}</td>
-          <td>
+    <p-orderList [value]="brands" class="p-col-8" header="Lista Brand" filterBy="id,name" [listStyle]="{'height': '500px'}">
+      <ng-template let-brand pTemplate="item">
+        <article class="p-grid">
+          <div class="p-col">
+            <h4>{{ brand.id }}</h4>
+          </div>
+          <div class="p-col">
+            <h4>{{ brand.name}}</h4>
+          </div>
+          <div class="p-col">
             <p-splitButton label="Elimina" icon="pi pi-trash" [model]="brandActions(brand.id)" (onClick)="deleteBrand(brand.id)"></p-splitButton>
-          </td>
-        </tr>
+          </div>
+        </article>
       </ng-template>
-    </p-table>
+    </p-orderList>
   </div>
 </section>

@@ -17,7 +17,7 @@ export class CrudService<T> {
     return this.client.get<T[]>(this.fullApi);
   }
 
-  read(id: Number): Observable<T>{
+  read(id: Number | String): Observable<T>{
     return this.client.get<T>(`${this.fullApi}/${id}`);
   }
 
