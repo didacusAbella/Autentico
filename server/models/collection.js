@@ -14,6 +14,6 @@ const Collection = db.define('collections', {
     type: db.Sequelize.STRING(9),
     field: 'year'
   }
-});
+}, { timestamps: false });
 
 module.exports = Collection;

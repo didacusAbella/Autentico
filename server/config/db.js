@@ -8,7 +8,7 @@ const DB_CONFIG = {
     password: '',
     options: {
       dialect: 'sqlite',
-      storage: path.resolve(__dirname, "../ext/authentic.sqlite"),
+      storage: path.resolve(__dirname, "../ext/authentic.db"),
       operatorsAliases: false
     }
   },

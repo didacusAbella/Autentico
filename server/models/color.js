@@ -10,6 +10,6 @@ const Color = db.define('Color', {
     type: db.Sequelize.STRING(6),
     field: 'hex'
   }
-});
+}, { timestamps: false });
 
 module.exports = Color;

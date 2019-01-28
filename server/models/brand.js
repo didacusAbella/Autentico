@@ -14,6 +14,6 @@ const Brand = db.define('brands', {
     type: db.Sequelize.STRING(20),
     field: 'name'
   }
-});
+}, { timestamps: false });
 
 module.exports = Brand;
