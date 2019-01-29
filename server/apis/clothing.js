@@ -11,7 +11,7 @@ router.get('/', clothingController.allClothings);
 
 router.get('/:id', ClothingRules['findClothingById'], validateRequest, clothingController.findClothingById);
 
-router.post('/:id', ClothingRules['createClothing'], validateRequest, clothingController.createClothing);
+router.post('/', ClothingRules['createClothing'], validateRequest, clothingController.createClothing);
 
 router.put('/:id', ClothingRules['updateClothing'], validateRequest, clothingController.updateClothing);
 

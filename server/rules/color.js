@@ -9,7 +9,6 @@ module.exports = {
     VALID_ID
   ],
   'createColor': [
-    VALID_ID,
     VALID_HEX
   ],
   'updateColor': [

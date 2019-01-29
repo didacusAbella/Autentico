@@ -10,7 +10,7 @@ router.get('/', brandController.allBrand);
 
 router.get('/:id', BrandRules['findBrandById'], validateRequest, brandController.findBrandById);
 
-router.post('/:id', BrandRules['createBrand'], validateRequest, brandController.createBrand);
+router.post('/', BrandRules['createBrand'], validateRequest, brandController.createBrand);
 
 router.put('/:id', BrandRules['updateBrand'], validateRequest, brandController.updateBrand);
 

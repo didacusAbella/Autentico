@@ -15,9 +15,8 @@ class BrandController {
 
   
   createBrand(req, res){
-    Brand.create({
-       id: req.params.id, 
-       name: req.params.name
+    Brand.create({ 
+       name: req.body.name
     })
     .then(createdBrand => ResponseFactory.createSuccessResponse(res, createdBrand))
     .catch(brandError => ResponseFactory.createInternalServerResponse(res, brandError));
@@ -25,15 +24,15 @@ class BrandController {
 
   
   findBrandById(req, res){
-    Brand.findById(req.params.id)
+    Brand.findByPk(req.params.id)
     .then(foundBrand => ResponseFactory.createSuccessResponse(res, foundBrand))
     .catch(brandError => ResponseFactory.createInternalServerResponse(res, brandError));
   }
 
   updateBrand(req, res){
     Brand.update({
-      name: req.params.name
-    }, { where: { id: req.params.id } })
+      name: req.body.name
+    }, { where: { id: req.body.id } })
     .then(updatedBrand => ResponseFactory.createSuccessResponse(res, updatedBrand))
     .catch(brandError => ResponseFactory.createInternalServerResponse(res, brandError));
   }

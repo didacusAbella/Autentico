@@ -10,7 +10,7 @@ router.get('/', colorController.allColors);
 
 router.get('/:id', ColorRules['findColorById'], validateRequest, colorController.findColorById);
 
-router.post('/:id', ColorRules['createColor'], validateRequest, colorController.createColor);
+router.post('/', ColorRules['createColor'], validateRequest, colorController.createColor);
 
 router.put('/:id', ColorRules['updateColor'], validateRequest, colorController.updateColor);
 

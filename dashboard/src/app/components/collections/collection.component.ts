@@ -20,5 +20,8 @@ export class CollectionComponent implements OnInit {
     });
   }
 
+  public deleteCollection(id: number) {
+    this.service.delete(id).subscribe(dt => console.log("Deleted"));
+  }
 
 }

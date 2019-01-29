@@ -10,7 +10,7 @@ router.get('/', collectionController.allCollections);
 
 router.get('/:id', CollectionRules['findCollectionById'], validateRequest, collectionController.findCollectionById);
 
-router.post('/:id', CollectionRules['createCollection'], validateRequest, collectionController.createCollection);
+router.post('/', CollectionRules['createCollection'], validateRequest, collectionController.createCollection);
 
 router.put('/:id', CollectionRules['updateCollection'], validateRequest, collectionController.updateCollection);
 

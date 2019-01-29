@@ -30,7 +30,10 @@ export class BrandDetailComponent implements OnInit {
 
   public editBrand(): void {
     if(this.editBrandForm.valid){
-      console.log("Farò l'aggiornamento");
+      let brand = {} as Brand;
+      brand.id = this.editBrandForm.value.id;
+      brand.name = this.editBrandForm.value.name;
+      this.brandService.update(brand, brand.id).subscribe(row => console.log("Updated Brand"));
     }
   }
 }

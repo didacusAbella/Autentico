@@ -4,6 +4,7 @@
 let express = require('express');
 let app = express();
 let API = require('./config/api');
+let bodyParser = require("body-parser");
 require('./models/index');
 /* Setup router api*/
 let clothingApi   = require('./apis/clothing');
@@ -11,9 +12,13 @@ let colorApi      = require('./apis/color');
 let collectionApi = require('./apis/collection');
 let brandApi      = require('./apis/brand');
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.use(function(req, res, next){
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', "Origin,X-Requested-With,Content-Type,Accept,x-client-key,x-client-token,x-client-secret, Authorization");
   next();
 });
 

@@ -15,7 +15,7 @@
         </td>
         <td>
           <button label="Modifica" icon="pi pi-pencil" [routerLink]="['./', color.id]" pButton></button>
-          <button label="Elimina" icon="pi pi-trash" pButton></button>
+          <button label="Elimina" icon="pi pi-trash" pButton (click)="deleteColor(color.id)"></button>
         </td>
       </tr>
     </ng-template>

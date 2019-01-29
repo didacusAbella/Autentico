@@ -15,25 +15,24 @@ class CollectionController {
   
   createCollection(req, res){
     Collection.create({
-      id: req.params.id,
-      season: req.params.season,
-      year: req.params.year
+      season: req.body.season,
+      year: req.body.year
     })
     .then(createdCollection => ResponseFactory.createSuccessResponse(res,createdCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError));
   }
 
   findCollectionById(req, res){
-    Collection.findById(req.params.id)
+    Collection.findByPk(req.params.id)
     .then(foundCollection => ResponseFactory.createSuccessResponse(res, foundCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError));
   }
 
   updateCollection(req, res){
     Collection.update({
-      season: req.params.season,
-      year: req.params.year
-    }, { where: { id: req.params.id } })
+      season: req.body.season,
+      year: req.body.year
+    }, { where: { id: req.body.id } })
     .then(updatedCollection => ResponseFactory.createSuccessResponse(res, updatedCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError))
   }

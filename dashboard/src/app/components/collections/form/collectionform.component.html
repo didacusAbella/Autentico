@@ -1,11 +1,11 @@
 <section class="p-grid p-justify-center">
   <article class="p-col-8">
-    <p-panel>
-      <p-header>
-        <h3>Inserisci Collezione</h3>
-      </p-header>
-      <p-fieldset legend="Compila Campi">
-        <form [formGroup]="collectionForm">
+    <form [formGroup]="collectionForm" (ngSubmit)="createCollection()">
+      <p-panel>
+        <p-header>
+          <h3>Inserisci Collezione</h3>
+        </p-header>
+        <p-fieldset legend="Compila Campi">
           <div class="p-col">
             <h4>Stagione:</h4>
             <p-selectButton formControlName="season" [options]="seasons" optionLabel="name"></p-selectButton>
@@ -14,11 +14,11 @@
             <h4>Anno</h4>
             <p-inputMask formControlName="year" mask="9999/9999" placeholder="Inserisci Anno"></p-inputMask>
           </div>
-        </form>
-      </p-fieldset>
-      <p-footer>
-        <button type="submit" pButton icon="pi pi-check" label="Crea Collezione"></button>
-      </p-footer>
-    </p-panel>
+        </p-fieldset>
+        <p-footer>
+          <button type="submit" pButton icon="pi pi-check" label="Crea Collezione"></button>
+        </p-footer>
+      </p-panel>
+    </form>
   </article>
 </section>

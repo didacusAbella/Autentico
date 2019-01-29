@@ -27,7 +27,7 @@ class ClothingController {
   }
   
   findClothingById(req, res) {
-    Clothing.findById(req.params.id)
+    Clothing.findByPk(req.params.id)
     .then(foundClothing => ResponseFactory.createSuccessResponse(res, foundClothing))
     .catch(clothingError => ResponseFactory.createInternalServerResponse(res, clothingError));
   }
