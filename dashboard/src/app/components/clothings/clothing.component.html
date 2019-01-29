@@ -1,10 +1,10 @@
 <section class="p-grid p-justify-center">
   <article class="p-col-8">
-    <p-dataView [value]="clothings" filterBy="name" [paginator]="true" [rows]="10" #dv>
+    <p-dataView [value]="clothings" filterBy="name" [paginator]="true" [rows]="10" #dv emptyMessage="Nessun Capo trovato" [sortField]="sortField">
       <p-header>
         <div class="p-grid p-align-center">
           <div class="p-col">
-            <h3>Lista Capi d'Abbigliamento</h3>
+            <p-dropdown [options]="sortOptions" placeholder="Ordina per" (onChange)="onSortChange($event)"></p-dropdown>
           </div>
           <div class="p-col">
               <input type="search" pInputText placeholder="Cerca" (keyup)="dv.filter($event.target.value)">

@@ -1,0 +1,28 @@
+<section class="p-grid p-justify-center">
+  <article class="p-col-8">
+    <p-panel>
+      <p-header>
+        <h3>Inserisci Nuovo Capo</h3>
+      </p-header>
+      <form [formGroup]="clothingForm">
+        <div class="ui-fluid p-col">
+            <p-inputMask formControlName="id" mask="a999" placeholder="Id Capo"></p-inputMask>
+        </div>
+        <div class="ui-fluid p-col">
+            <input type="text" pInputText placeholder="Inserisci Nome" formControlName="name">
+        </div>
+        <div class="ui-fluid p-col">
+            <h4>Difettoso?</h4>
+            <p-inputSwitch formControlName="defect"></p-inputSwitch>
+        </div>
+        <div class="p-col">
+            <h4>Carica Immagine</h4>
+            <p-fileUpload mode="basic" name="img" url="" accept="image/*"></p-fileUpload>
+        </div>
+        <p-footer>
+          <button pButton label="Crea Capo" icon="pi pi-check" type="submit"></button>
+        </p-footer>
+      </form>
+    </p-panel>
+  </article>
+</section>
