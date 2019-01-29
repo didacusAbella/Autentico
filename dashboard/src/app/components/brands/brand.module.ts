@@ -12,6 +12,7 @@ import { ConfirmationService } from 'primeng/api';
 import { SpinnerModule } from 'primeng/spinner';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { PanelModule } from 'primeng/panel';
 /* Autentico Libraries */
 import { BrandDetailComponent } from './detail/branddetail.component';
 import { BrandsComponent } from "./brand.component";
@@ -30,9 +31,12 @@ const BRAND_ROUTES: Routes = [
 
 @NgModule({
   declarations: [BrandsComponent, BrandDetailComponent, BrandFormComponent],
-  imports: [CommonModule, SplitButtonModule, ConfirmDialogModule, 
+  imports: [
+    CommonModule, SplitButtonModule, ConfirmDialogModule, 
     FieldsetModule, SpinnerModule, OrderListModule, 
-    InputTextModule, ButtonModule, ReactiveFormsModule, RouterModule.forChild(BRAND_ROUTES)],
+    InputTextModule, ButtonModule, ReactiveFormsModule, 
+    PanelModule, RouterModule.forChild(BRAND_ROUTES)
+  ],
   exports: [RouterModule],
   providers: [BrandService, ConfirmationService]
 })

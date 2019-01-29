@@ -1,21 +1,20 @@
 <section class="p-grid p-justify-center">
-  <form [formGroup]="collectionForm" *ngIf="collectionDetail; else loading" class="p-col p-grid">
-    <p-fieldset legend="Modifica Collezione" [toggleable]="true">
-      <div class="ui-inputgroup p-col-12">
-        <span class="ui-inputgroup-addon">Id</span>
-        <p-spinner formControlName="id" disabled="true"></p-spinner>
-      </div>
-      <div class="ui-inputgroup p-col-12">
-        <span class="ui-inputgroup-addon">Anno</span>
-        <p-inputMask formControlName="year" mask="9999/9999"></p-inputMask>
-      </div>
-      <div class="p-col-12 ui-input-group">
-        <p-selectButton formControlName="season" [options]="seasons" optionLabel="name"></p-selectButton>
-      </div>
-      <button type="submit" label="Modifica" icon="pi pi-pencil" pButton></button>
-    </p-fieldset>
-  </form>
+  <article class="p-col-8">
+    <form [formGroup]="collectionForm" *ngIf="collectionDetail">
+      <p-fieldset legend="Modifica Collezione" [toggleable]="true">
+        <div class="ui-fluid p-col">
+          <p-spinner formControlName="id"></p-spinner>
+        </div>
+        <div class="ui-fluid p-col">
+          <p-inputMask formControlName="year" mask="9999/9999"></p-inputMask>
+        </div>
+        <div class="p-col">
+          <p-selectButton formControlName="season" [options]="seasons" optionLabel="name"></p-selectButton>
+        </div>
+        <div class="p-col">
+          <button type="submit" pButton label="Modifica Collezione" icon="pi pi-pencil"></button>
+        </div>
+      </p-fieldset>
+    </form>
+  </article>
 </section>
-<ng-template #loading>
-  <i class="pi pi-spin pi-spinner" style="font-size: 3em"></i>
-</ng-template>
