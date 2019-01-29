@@ -20,6 +20,7 @@
     "chai-http": "~4.2.1"
   },
   "scripts": {
+    "prestart": "node ./ext/load.js",
     "start": "node server.js",
     "test": "mocha --recursive"
   }

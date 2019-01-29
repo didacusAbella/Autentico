@@ -30,6 +30,6 @@ const Clothing = db.define('clothing', {
     type: db.Sequelize.BLOB,
     field: 'img'
   }
-});
+}, { timestamps: false } );
 
 module.exports = Clothing;
