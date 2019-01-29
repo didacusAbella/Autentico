@@ -24,7 +24,7 @@ class BrandController {
 
   
   findBrandById(req, res){
-    Brand.findById(req.params.id)
+    Brand.findByPk(req.params.id)
     .then(foundBrand => ResponseFactory.createSuccessResponse(res, foundBrand))
     .catch(brandError => ResponseFactory.createInternalServerResponse(res, brandError));
   }
@@ -39,7 +39,7 @@ class BrandController {
 
   deleteBrand(req, res){
     Brand.destroy({
-      where: { id: req.body.id }
+      where: { id: req.params.id }
     })
     .then(deletedBrand => ResponseFactory.createSuccessResponse(res, deletedBrand))
     .catch(brandError => ResponseFactory.createInternalServerResponse(res, brandError))

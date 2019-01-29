@@ -13,7 +13,7 @@
          <h4>Stagione: {{ collection.season }}</h4>
          <h4>Anno: {{ collection.year }}</h4>
          <h3><button pButton label="Modifica" [routerLink]="[collection.id]" icon="pi pi-pencil"></button></h3>
-         <h3><button pButton label="Elimina" icon="pi pi-trash"></button></h3>
+         <h3><button pButton label="Elimina" icon="pi pi-trash" (click)="deleteCollection(collection.id)"></button></h3>
         </div>
       </section>
     </ng-template>

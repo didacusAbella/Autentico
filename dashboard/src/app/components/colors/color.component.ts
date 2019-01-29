@@ -19,4 +19,8 @@ export class ColorComponent implements OnInit {
     });
   }
 
+  public deleteColor(id: number) {
+    this.colorService.delete(id).subscribe(row => console.log("Color Deleted"));
+  }
+
 }

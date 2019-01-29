@@ -23,7 +23,7 @@ class ColorController {
 
   
   findColorById(req, res){
-    Color.findById(req.params.id)
+    Color.findByPk(req.params.id)
     .then(foundColor => ResponseFactory.createSuccessResponse(res, foundColor))
     .catch(colorError => ResponseFactory.createInternalServerResponse(res, colorError));
   }

@@ -1,6 +1,6 @@
 <section class="p-grid p-justify-center">
   <article class="p-col-8">
-    <form [formGroup]="editBrandForm" *ngIf="selectedBrand">
+    <form [formGroup]="editBrandForm" *ngIf="selectedBrand" (ngSubmit)="editBrand()">
       <p-fieldset legend="Modifica dati" toggleable="true">
         <div class="ui-fluid p-col">
             <p-spinner [disabled]="true" formControlName="id"></p-spinner>
@@ -9,7 +9,7 @@
             <input id="brandName" type="text" size="30" pInputText formControlName="name" placeholder="Modifica Nome">
         </div>
         <div class="p-col">
-            <button pButton label="Modifica" type="submit" (click)="editBrand"></button>
+            <button pButton label="Modifica" type="submit"></button>
         </div>
       </p-fieldset>
     </form>

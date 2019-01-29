@@ -24,7 +24,7 @@ export class BrandsComponent implements OnInit {
     this.confirmService.confirm({
       header: "Conferma Eliminazione",
       message: "Sei sicuro di voler eliminare il brand"+id,
-      accept: () => console.log("Brand eliminato"),
+      accept: () => this.service.delete(id).subscribe(row => console.log("deleted brand")),
       reject: () => console.log("Eliminazione annullata")
     });
   }

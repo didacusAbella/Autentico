@@ -23,7 +23,7 @@ class CollectionController {
   }
 
   findCollectionById(req, res){
-    Collection.findById(req.params.id)
+    Collection.findByPk(req.params.id)
     .then(foundCollection => ResponseFactory.createSuccessResponse(res, foundCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError));
   }
@@ -39,7 +39,7 @@ class CollectionController {
 
   deleteCollection(req, res) {
     Collection.destroy({
-      where: { id: req.body.id }
+      where: { id: req.params.id }
     })
     .then(deletedCollection => ResponseFactory.createSuccessResponse(res, deletedCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError))

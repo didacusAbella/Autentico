@@ -39,4 +39,14 @@ export class CollectionDetailComponent implements OnInit {
     let index = (seasonName === "Autunno/Inverno") ? 0 : 1;
     return this.seasons[index];
   }
+
+  public updateCollection(){
+    if(this.collectionForm.valid) {
+      let collection = {} as Collection;
+      collection.id = this.collectionForm.value.id;
+      collection.season = this.collectionForm.value.season.name;
+      collection.year = this.collectionForm.value.year;
+      this.service.update(collection, collection.id).subscribe(dt => console.log("Updated"));
+    }
+  }
 }
