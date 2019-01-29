@@ -28,7 +28,9 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      animate: false // disable animation
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
