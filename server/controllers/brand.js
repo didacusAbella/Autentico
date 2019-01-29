@@ -15,9 +15,8 @@ class BrandController {
 
   
   createBrand(req, res){
-    Brand.create({
-       id: req.params.id, 
-       name: req.params.name
+    Brand.create({ 
+       name: req.body.name
     })
     .then(createdBrand => ResponseFactory.createSuccessResponse(res, createdBrand))
     .catch(brandError => ResponseFactory.createInternalServerResponse(res, brandError));
@@ -32,15 +31,15 @@ class BrandController {
 
   updateBrand(req, res){
     Brand.update({
-      name: req.params.name
-    }, { where: { id: req.params.id } })
+      name: req.body.name
+    }, { where: { id: req.body.id } })
     .then(updatedBrand => ResponseFactory.createSuccessResponse(res, updatedBrand))
     .catch(brandError => ResponseFactory.createInternalServerResponse(res, brandError));
   }
 
   deleteBrand(req, res){
     Brand.destroy({
-      where: { id: req.params.id }
+      where: { id: req.body.id }
     })
     .then(deletedBrand => ResponseFactory.createSuccessResponse(res, deletedBrand))
     .catch(brandError => ResponseFactory.createInternalServerResponse(res, brandError))

@@ -15,8 +15,7 @@ class ColorController {
   
   createColor(req, res){
     Color.create({
-       id: req.params.id,
-       hex: req.params.hex
+       hex: req.body.hex
       })
       .then(createdColor => ResponseFactory.createSuccessResponse(res, createdColor))
       .catch(colorError => ResponseFactory.createInternalServerResponse(res, colorError));
@@ -31,7 +30,7 @@ class ColorController {
 
   updateColor(req, res){
     Color.update({
-      hex: req.params.hex
+      hex: req.body.hex
     }, { where: { id: req.params.id } })
     .then(updatedColor => ResponseFactory.createSuccessResponse(res, updatedColor))
     .catch(colorError => ResponseFactory.createInternalServerResponse(res, colorError));

@@ -39,5 +39,4 @@ export class CollectionDetailComponent implements OnInit {
     let index = (seasonName === "Autunno/Inverno") ? 0 : 1;
     return this.seasons[index];
   }
-
 }

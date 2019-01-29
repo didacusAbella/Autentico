@@ -27,4 +27,14 @@ export class CollectionFormComponent implements OnInit {
     });
   }
 
+  public createCollection() {
+    if(this.collectionForm.valid){
+      let newCollection = {} as Collection;
+      newCollection.season = this.collectionForm.value.season.name;
+      newCollection.year = this.collectionForm.value.year;
+      this.service.create(newCollection).subscribe(dt => console.log(dt));
+    }
+  }
+
+
 }

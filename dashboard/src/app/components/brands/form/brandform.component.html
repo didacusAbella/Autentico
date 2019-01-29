@@ -1,19 +1,19 @@
 <section class="p-grid p-justify-center">
   <article class="p-col-6">
-    <p-panel>
-      <p-header>
-        <h3>Inserisci Collezione</h3>
-      </p-header>
-      <form [formGroup]="createBrandForm">
+    <form [formGroup]="createBrandForm" (ngSubmit)="createBrand()">
+      <p-panel>
+        <p-header>
+          <h3>Inserisci Brand</h3>
+        </p-header>
         <p-fieldset legend="Inserisci Campi">
           <div class="ui-fluid">
             <input pInputText placeholder="Nome Brand" formControlName="name">
           </div>
         </p-fieldset>
-      </form>
-      <p-footer>
-        <button pButton label="Crea Nuovo Brand" icon="pi pi-check" (click)="createBrand"></button>
-      </p-footer>
-    </p-panel>
+        <p-footer>
+          <button pButton label="Crea Nuovo Brand" icon="pi pi-check" type="submit"></button>
+        </p-footer>
+      </p-panel>
+    </form>
   </article>
 </section>

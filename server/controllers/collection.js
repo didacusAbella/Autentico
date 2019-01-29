@@ -15,9 +15,8 @@ class CollectionController {
   
   createCollection(req, res){
     Collection.create({
-      id: req.params.id,
-      season: req.params.season,
-      year: req.params.year
+      season: req.body.season,
+      year: req.body.year
     })
     .then(createdCollection => ResponseFactory.createSuccessResponse(res,createdCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError));
@@ -31,16 +30,16 @@ class CollectionController {
 
   updateCollection(req, res){
     Collection.update({
-      season: req.params.season,
-      year: req.params.year
-    }, { where: { id: req.params.id } })
+      season: req.body.season,
+      year: req.body.year
+    }, { where: { id: req.body.id } })
     .then(updatedCollection => ResponseFactory.createSuccessResponse(res, updatedCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError))
   }
 
   deleteCollection(req, res) {
     Collection.destroy({
-      where: { id: req.params.id }
+      where: { id: req.body.id }
     })
     .then(deletedCollection => ResponseFactory.createSuccessResponse(res, deletedCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError))

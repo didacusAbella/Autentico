@@ -12,6 +12,8 @@ export class BrandFormComponent implements OnInit {
   public createdBrand: Brand;
   public createBrandForm: FormGroup;
 
+  constructor(private brandService: BrandService) {}
+
   ngOnInit(): void {
     this.createBrandForm = new FormGroup({
       name: new FormControl('', [Validators.required])
@@ -19,8 +21,12 @@ export class BrandFormComponent implements OnInit {
   }
 
   public createBrand() {
-    if(this.createBrandForm.valid){
-      console.log("Brand Creato con successo");
+    if(this.createBrandForm.valid) {
+      let newBrand = {} as Brand;
+      newBrand.name = this.createBrandForm.value.name;
+      this.brandService.create(newBrand).subscribe(br => {
+        console.log("Crearted"+br);
+      });
     }
   }
 

@@ -8,7 +8,6 @@ module.exports = {
     VALID_ID
   ],
   'createBrand': [
-    VALID_ID,
     VALID_NAME
   ],
   'updateBrand': [

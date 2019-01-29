@@ -12,7 +12,6 @@ module.exports = {
     VALID_ID
   ],
   'createClothing': [
-    VALID_ID,
     VALID_NAME,
     VALID_DESCRIPTION,
     VALID_DEFECT,
