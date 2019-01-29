@@ -1,4 +1,4 @@
-<article id="info">
+<!--<article id="info">
   <section id="stakeholders" class="p-grid">
     <p-panel class="p-col-6" header="Ecco chi ha contribuito alla realizzazione del progetto Autentico">
       <div *ngFor="let stakeholder of stakeholders">
@@ -19,4 +19,34 @@
       </p-fieldset>
     </form>
   </section>
-</article>
+</article>-->
+<section class="p-grid p-justify-center">
+  <div class="p-col-8">
+    <p-tabView>
+      <p-tabPanel header="Contributori">
+        <p-organizationChart [value]="stakeholders">
+          <ng-template let-node pTemplate="default">
+            <h1>{{ node.label }}</h1>
+            <h3>{{ node.data.stakeholder }}</h3>
+          </ng-template>
+        </p-organizationChart>
+      </p-tabPanel>
+      <p-tabPanel header="Contatti">
+        <form [formGroup]="emailForm">
+          <p-fieldset legend="Manda un email per supporto">
+            <div class="ui-fluid p-col">
+              <input type="text" pInputText class="p-col-12" formControlName="from" placeholder="Inserisci la tua Email">
+            </div>
+            <div class="ui-fluid p-col">
+              <p-chips max="3" allowDuplicate="false" placeholder="Destinatari" formControlName="to"></p-chips>
+            </div>
+            <div class="ui-fluid p-col">
+              <textarea pInputTextArea [rows]="20" placeholder="Contenuto" formControlName="content"></textarea>
+            </div>
+            <button type="submit" pButton label="Spedisci" icon="pi pi-envelope"></button>
+          </p-fieldset>
+        </form>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</section>

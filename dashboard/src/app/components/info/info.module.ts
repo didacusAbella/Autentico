@@ -12,6 +12,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ChipsModule } from 'primeng/chips';
 import { ButtonModule } from 'primeng/button';
+import { OrganizationChartModule } from 'primeng/organizationchart';
+import { TabViewModule } from 'primeng/tabview';
 /** Autentico Components */
 import { InfoComponent } from './info.component';
 
@@ -23,10 +25,12 @@ const INFO_ROUTES :Routes = [
   declarations: [
     InfoComponent
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule,
+  imports: [
+    CommonModule, ReactiveFormsModule, FormsModule,
     CardModule, PanelModule, FieldsetModule, 
     InputTextModule, InputTextareaModule, ChipsModule, 
-    ButtonModule, RouterModule.forChild(INFO_ROUTES)],
+    ButtonModule, OrganizationChartModule, TabViewModule, RouterModule.forChild(INFO_ROUTES)
+  ],
   exports: [RouterModule]
 })
 export class InfoModule {}
