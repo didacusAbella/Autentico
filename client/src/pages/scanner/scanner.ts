@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, App } from 'ionic-angular';
+import { NavController, App, Toast } from 'ionic-angular';
 import { CodeStringPage } from '../code-string/code-string';
 import { Dialogs } from '@ionic-native/dialogs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ProductFoundPage } from '../product-found/product-found';
+import { ToastController } from 'ionic-angular';
 @Component({
   selector: 'page-scanner',
   templateUrl: 'scanner.html'
@@ -11,7 +12,7 @@ import { ProductFoundPage } from '../product-found/product-found';
 })
 
 export class ScannerPage {
-  constructor(public navCtrl: NavController, public app:App,private dialogs: Dialogs, private barcodeScanner: BarcodeScanner) {
+  constructor(public navCtrl: NavController, public app:App,private dialogs: Dialogs, private barcodeScanner: BarcodeScanner, private toastCtr: ToastController) {
   
   }
   goAnOtherPage() {
@@ -26,8 +27,17 @@ export class ScannerPage {
       .then(() => console.log('Dialog dismissed'))
       .catch(e => console.log('Error displaying dialog', e));
       }
+      else if(barcodeData.text==""){
+        let toast = this.toastCtr.create({
+          message: 'Operazione annullata',
+          duration: 2000,
+          position: 'bottom'
+        });
+        toast.present(toast);
+      }
       else{
-        this.navCtrl.setRoot(ProductFoundPage, {}, { animate: false });
+        this.app.getRootNav().push(ProductFoundPage,{},{animate:false})
+
       }
      });
 
