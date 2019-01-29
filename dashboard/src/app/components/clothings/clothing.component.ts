@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Clothing } from './clothing';
 import { ClothingService } from './clothing.service';
-import { MenuItem } from 'primeng/api';
+import { SelectItem, MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'autentico-clothing',
@@ -13,8 +13,15 @@ export class ClothingComponent implements OnInit {
   public clothings: Clothing[];
   public display: boolean;
   public detailedClothing: Clothing;
+  public sortOptions: SelectItem[];
+  public sortField: string;
 
-  constructor(private clothingService: ClothingService) {}
+  constructor(private clothingService: ClothingService) {
+    this.sortOptions = [
+      { label: "ID", value: "id" },
+      { label: "Nome", value: "name" }
+    ]
+  }
 
   ngOnInit(): void {
     this.clothingService.readAll().subscribe(data => {
@@ -37,4 +44,10 @@ export class ClothingComponent implements OnInit {
   public deleteClothing(id): any {
     return 0;
   }
+
+  public onSortChange(event) {
+    let value = event.value;
+    this.sortField = value;
+  }
+
 }

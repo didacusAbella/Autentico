@@ -6,19 +6,32 @@ import { ClothingComponent } from './clothing.component';
 import { DataViewModule } from 'primeng/dataview';
 import { InputTextModule } from "primeng/inputtext";
 import { DialogModule } from "primeng/dialog";
+import { PanelModule } from 'primeng/panel';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import { InputMaskModule } from 'primeng/inputmask';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { ClothingService } from './clothing.service';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ClothingFormComponent } from './form/clothingform.component';
 
 const CLOTHING_ROUTES: Routes = [
   { path: 'clothings', children: [
-    { path: '', component: ClothingComponent }
+    { path: '', component: ClothingComponent },
+    { path: 'newClothing', component: ClothingFormComponent }
   ]}
 ];
 
 @NgModule({
-  declarations: [ClothingComponent],
-  imports: [CommonModule, ReactiveFormsModule, DataViewModule, 
-    InputTextModule, SplitButtonModule, DialogModule ,RouterModule.forChild(CLOTHING_ROUTES)],
+  declarations: [ClothingComponent, ClothingFormComponent],
+  imports: [
+    CommonModule, ReactiveFormsModule, DataViewModule, 
+    InputTextModule, SplitButtonModule, DialogModule, 
+    DropdownModule, PanelModule, InputMaskModule, 
+    InputSwitchModule, FileUploadModule, ButtonModule,
+    RouterModule.forChild(CLOTHING_ROUTES)
+  ],
   exports: [RouterModule],
   providers: [ClothingService]
 })
