@@ -5,9 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { App } from 'ionic-angular/components/app/app';
-import { NavController } from 'ionic-angular/navigation/nav-controller';
-import { HomePage } from '../pages/home/home';
-import { Dialogs } from '@ionic-native/dialogs';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,13 +12,13 @@ import { Dialogs } from '@ionic-native/dialogs';
 export class MyApp {
   rootPage:any = TabsPage;
    nav: Nav;
-
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private app: App,  private dialogs: Dialogs) {
+   app: App;
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
       platform.registerBackButtonAction(() => {
-        app.navPop();
+        this.app.navPop();
     });
     });
   }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -9,7 +9,7 @@ export class HomePage {
   hideDiv: Boolean
   mtn_txt: String = "mostra altri brands";
 
-  constructor(public navCtrl: NavController, private platform: Platform) {
+  constructor(public navCtrl: NavController) {
   }
 
   hide() {
