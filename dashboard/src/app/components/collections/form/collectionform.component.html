@@ -1,15 +1,24 @@
-<section class="p-grid">
-  <p-fieldset legend="Crea Nuona Collezione" class="p-col-6">
-      <form [formGroup]="collectionForm">
-          <div class="ui-inputgroup">
-            <span class="ui-inputgroup-addon">Stagione</span>
+<section class="p-grid p-justify-center">
+  <article class="p-col-8">
+    <p-panel>
+      <p-header>
+        <h3>Inserisci Collezione</h3>
+      </p-header>
+      <p-fieldset legend="Compila Campi">
+        <form [formGroup]="collectionForm">
+          <div class="p-col">
+            <h4>Stagione:</h4>
             <p-selectButton formControlName="season" [options]="seasons" optionLabel="name"></p-selectButton>
           </div>
-          <div class="ui-inputgroup">
-            <span class="ui-inputgroup-addon">Anno</span>
-            <p-inputMask formControlName="year" mask="9999/9999"></p-inputMask>
+          <div class="ui-fluid p-col">
+            <h4>Anno</h4>
+            <p-inputMask formControlName="year" mask="9999/9999" placeholder="Inserisci Anno"></p-inputMask>
           </div>
-          <button type="submit" pButton label="Crea Collezione"></button>
         </form>
-  </p-fieldset>
+      </p-fieldset>
+      <p-footer>
+        <button type="submit" pButton icon="pi pi-check" label="Crea Collezione"></button>
+      </p-footer>
+    </p-panel>
+  </article>
 </section>

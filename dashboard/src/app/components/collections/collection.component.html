@@ -1,5 +1,5 @@
 <section class="p-grid p-justify-center" id="list-collection">
-  <p-virtualScroller [value]="collections" [itemSize]="250" class="p-col-6" scrollHeight="400px">
+  <p-virtualScroller [value]="collections" [itemSize]="250" class="p-col-6" scrollHeight="500px">
     <p-header>
       Lista delle Collezioni
     </p-header>
@@ -12,12 +12,8 @@
          <h4>Id: {{ collection.id }}</h4>
          <h4>Stagione: {{ collection.season }}</h4>
          <h4>Anno: {{ collection.year }}</h4>
-         <p>
-           <button pButton label="Modifica" [routerLink]="[collection.id]" icon="pi pi-pencil"></button>
-         </p>
-         <p>
-           <button pButton label="Elimina" icon="pi pi-trash"></button>
-         </p>
+         <h3><button pButton label="Modifica" [routerLink]="[collection.id]" icon="pi pi-pencil"></button></h3>
+         <h3><button pButton label="Elimina" icon="pi pi-trash"></button></h3>
         </div>
       </section>
     </ng-template>

@@ -1,12 +1,19 @@
-<section class="p-grid p-justify-center p-align-center">
-  <article class="p-col-6" style="background-color: white;">
-    <form [formGroup]="createBrandForm">
-      <p-fieldset legend="Crea Nuovo Brand">
-        <div class="ui-fluid">
-            <input pInputText placeholder="Nuovo Brand" formControlName="name">
-        </div>
-            <button pButton label="Crea Nuovo Brand" (click)="createBrand"></button>
-      </p-fieldset>
-    </form>
+<section class="p-grid p-justify-center">
+  <article class="p-col-6">
+    <p-panel>
+      <p-header>
+        <h3>Inserisci Collezione</h3>
+      </p-header>
+      <form [formGroup]="createBrandForm">
+        <p-fieldset legend="Inserisci Campi">
+          <div class="ui-fluid">
+            <input pInputText placeholder="Nome Brand" formControlName="name">
+          </div>
+        </p-fieldset>
+      </form>
+      <p-footer>
+        <button pButton label="Crea Nuovo Brand" icon="pi pi-check" (click)="createBrand"></button>
+      </p-footer>
+    </p-panel>
   </article>
 </section>
