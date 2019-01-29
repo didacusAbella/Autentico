@@ -15,7 +15,7 @@ import { Dialogs } from '@ionic-native/dialogs';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { BackgroundMode } from '@ionic-native/background-mode';
-
+import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 @NgModule({
   declarations: [
     MyApp,
@@ -47,6 +47,7 @@ import { BackgroundMode } from '@ionic-native/background-mode';
     EmailComposer,
     SocialSharing,
     BackgroundMode,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
