@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { StakeHolder } from './stakeholder';
 import { FormGroup, FormControl } from '@angular/forms';
+import {TreeNode} from 'primeng/api';
 
 @Component({
   templateUrl: './info.component.html',
@@ -9,17 +9,26 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class InfoComponent implements OnInit {
 
-  public stakeholders: StakeHolder[];
+  public stakeholders: TreeNode[];
   public emailForm: FormGroup;
 
   ngOnInit(): void {
     this.stakeholders = [
-      new StakeHolder("Giammaria Giordano", "Studente di SITS. Responsabile sviluppo e creazione dell'Applicazione Autentico"),
-      new StakeHolder("Valeria Pontillo", "Studente di SITS Responsabile coordinamento e costruzione di tutte le componenti di Autentico"),
-      new StakeHolder("Diego Avella", "Studente di SITS. Responsabile Realizzazione Dashboard"),
-      new StakeHolder("Marica Rinaldi", "Responsabile per il coordinamento degli studenti per il design dell'applicazione"),
-      new StakeHolder("NexSoft S.P.A", "Sponsor del Progetto"),
-      new StakeHolder("Mariarita Francese", "Docente presso l'Università degli studi di Salerno. Responsabile coordinamento studenti")
+      { 
+        label: "Cliente",
+        data: { stakeholder: "NexSoft Spa" },
+        children: [
+          { 
+            label: "Top Manager",
+            data: { stakeholder: "Mariarita Francese" },
+            children: [
+              { label: "Developer", data: { stakeholder: "Diego Avella" }, leaf: true },
+              { label: "Developer", data: { stakeholder: "Giammaria Giordano" }, leaf: true },
+              { label: "Developer", data: { stakeholder: "Valeria Pontillo" }, leaf: true }
+            ]
+          }
+        ]
+      }
     ];
     this.initForm();
   }
