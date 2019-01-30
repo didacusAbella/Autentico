@@ -14,9 +14,7 @@ module.exports = {
   'createClothing': [
     VALID_NAME,
     VALID_DESCRIPTION,
-    VALID_DEFECT,
-    VALID_BRAND,
-    VALID_COLLECTION
+    VALID_DEFECT
   ],
   'updateClothing': [
     VALID_ID,
