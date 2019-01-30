@@ -17,28 +17,107 @@
       </div>
     </ion-card-header>
     <ion-card-content>
+      <div class="grid-full">
+        <ion-row>
+          <ion-col>
+            <img class="resize" src="assets/imgs/angry.png">
+          </ion-col>
+          <ion-col>
+            <p> Diego Avella<br> Giammaria Giordano<br> Valeria Pontillo</p>
+          </ion-col>
+        </ion-row>
+      </div>
 
-      <p>Developed by:<br> Diego Avella, Giammaria Giordano, Valeria Pontillo <img class="resize" src="assets/imgs/angry.jpg"> 
-        <br>Supervised by:<br>
-        Nexsoft S.p.A <img class="resize" src="assets/imgs/nexsoft.jpg"><br>
-        Prof.ssa Rita Francese <img class="resize" src="assets/imgs/unisa.png"><br>
-      </p>
-      <br>
-      <p> Se questa applicazione ti è piaciuta non dimenticati di condividerla!</p>
-   
-        <button class="circle" ion-button small round (click)="sharefb()">
-          <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
-        </button>
-        <button class="circle" ion-button small round (click)="shareTwitter()">
-          <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
-        </button>
-      <p (click)="sendMail()"> <span class="textStyle"> premi per segnalare un problema </span></p><br>
-      <div class="left">
-        Version 0.1
-        <div class="right">
-          Copyright © Inc. all rights reserved
-        </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <div class="Title">
+        <h1>Supervisionata da</h1>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="grid-full">
+        <ion-row>
+          <ion-col>
+            <img class="resize" src="assets/imgs/nexsoft.jpg">
+          </ion-col>
+          <ion-col>
+            <p>Nexsoft S.p.A.</p>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="grid-full">
+        <ion-row>
+          <ion-col>
+            <img class="resize" src="assets/imgs/unisa.png">
+          </ion-col>
+          <ion-col>
+            <p>Prof.ssa Rita Francese</p>
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <div class="Title">
+        <h1>Condividi </h1>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="grid-full">
+        <ion-row class="row">
+          <div class="col">
+            <ion-col>
+              <button class="circle" ion-button small round (click)="sharefb()">
+                <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button class="circle" ion-button small round (click)="shareTwitter()">
+                <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
+              </button>
+            </ion-col>
+          </div>
+        </ion-row>
       </div>
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <div class="Title">
+        <h1>Segnalaci un problema</h1>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="grid-full">
+        <ion-row>
+          <ion-col>
+
+            <p (click)="sendMail()"> <span class="textStyle"> premi per segnalare un problema </span></p><br>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
+<!-- 
+          <button class="circle" ion-button small round (click)="sharefb()">
+            <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+          </button>
+          <button class="circle" ion-button small round (click)="shareTwitter()">
+            <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
+          </button>
+          <p (click)="sendMail()"> <span class="textStyle"> premi per segnalare un problema </span></p><br>
+          <div class="left">
+            Version 0.1
+            <div class="right">
+              Copyright © Inc. all rights reserved
+            </div>
+          </div>
+          -->
