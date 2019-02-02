@@ -15,6 +15,10 @@
             <h4>Difettoso?</h4>
             <p-inputSwitch formControlName="defect"></p-inputSwitch>
         </div>
+        <div class="ui-fluid p-col">
+          <h4>Brand</h4>
+          <p-listbox formControlName="brand" [options]="brandList" filter="true" [listStyle]="{'max-height':'250px'}"></p-listbox>
+        </div>
         <div class="p-col">
             <h4>Carica Immagine</h4>
             <p-fileUpload mode="basic" auto="true" name="img[]" url="" accept="image/*" customUpload="true" (uploadHandler)="addImage($event)"></p-fileUpload>

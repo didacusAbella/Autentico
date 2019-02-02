@@ -11,6 +11,7 @@ let clothingApi   = require('./apis/clothing');
 let colorApi      = require('./apis/color');
 let collectionApi = require('./apis/collection');
 let brandApi      = require('./apis/brand');
+let statisticApi  = require('./apis/statistic');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -26,6 +27,7 @@ app.use('/clothings', clothingApi);
 app.use('/colors', colorApi);
 app.use('/collections', collectionApi);
 app.use('/brands',brandApi);
+app.use('/statistics', statisticApi);
 
 
 

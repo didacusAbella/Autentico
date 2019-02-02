@@ -2,6 +2,9 @@ import { Component, OnInit} from "@angular/core";
 import { ClothingService } from '../clothing.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Clothing } from '../clothing';
+import { BrandService } from '../../brands/brand.service';
+import { SelectItem } from 'primeng/api';
+
 
 @Component({
   selector: 'autentico-clothingform',
@@ -10,16 +13,23 @@ import { Clothing } from '../clothing';
 export class ClothingFormComponent implements OnInit {
   
   public clothingForm: FormGroup;
+  public brandList: SelectItem[];
   
-  constructor(private clothingService: ClothingService) {}
+  constructor(private clothingService: ClothingService, private brandService: BrandService) {
+    this.brandList = new Array();
+  }
 
   ngOnInit(): void {
     this.clothingForm = new FormGroup({
       id: new FormControl(''),
       name: new FormControl(''),
       defect: new FormControl(false),
-      img: new FormControl()
+      img: new FormControl(),
+      brand: new FormControl('')
     });
+    this.brandService.readAll().subscribe(brands => {
+      brands.map(brand => this.brandList.push({ label: brand.name, value: brand.id }))
+    })
   }
 
   public addImage(event) {
