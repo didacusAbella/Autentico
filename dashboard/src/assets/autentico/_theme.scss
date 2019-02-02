@@ -703,7 +703,7 @@ body {
 		.ui-listbox-header {
 			padding: 0.429em 0.857em 0.429em 0.857em;
 			border-bottom: 1px solid $color_gray_nurse_approx;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			background-color: $white;
 			margin: 0;
 			.ui-listbox-filter-container {
@@ -727,7 +727,7 @@ body {
 				margin: 0;
 				padding: 0.429em 0.857em;
 				border: 0 none;
-				color: $color_mine_shaft_approx;
+				color: $pure_black;
 				background-color: transparent;
 				-moz-border-radius: 0;
 				-webkit-border-radius: 0;
@@ -752,7 +752,7 @@ body {
 		.ui-listbox-footer {
 			padding: 0.429em 0.857em 0.429em 0.857em;
 			border-top: 1px solid $color_gray_nurse_approx;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			background-color: $white;
 		}
 		&:not(.ui-state-disabled) .ui-listbox-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
@@ -2118,7 +2118,7 @@ body {
 			background-color: $white;
 			padding: 0.571em 1em;
 			border: 1px solid $color_pumice_approx;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			.ui-tabview-panel {
 				padding: 0;
 			}

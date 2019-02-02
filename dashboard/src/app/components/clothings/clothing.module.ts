@@ -14,6 +14,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ClothingService } from './clothing.service';
 import { FileUploadModule } from 'primeng/fileupload';
+import { ListboxModule } from 'primeng/listbox';
 import { ClothingFormComponent } from './form/clothingform.component';
 
 const CLOTHING_ROUTES: Routes = [
@@ -30,6 +31,7 @@ const CLOTHING_ROUTES: Routes = [
     InputTextModule, SplitButtonModule, DialogModule, 
     DropdownModule, PanelModule, InputMaskModule, 
     InputSwitchModule, FileUploadModule, ButtonModule,
+    ListboxModule,
     RouterModule.forChild(CLOTHING_ROUTES)
   ],
   exports: [RouterModule],

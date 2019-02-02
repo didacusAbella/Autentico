@@ -49,5 +49,4 @@ export class ClothingComponent implements OnInit {
     let value = event.value;
     this.sortField = value;
   }
-
 }

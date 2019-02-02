@@ -4,7 +4,7 @@
       <p-header>
         <h3>Inserisci Nuovo Capo</h3>
       </p-header>
-      <form [formGroup]="clothingForm">
+      <form [formGroup]="clothingForm" (ngSubmit)="createClothing()" enctype="multipart/form-data">
         <div class="ui-fluid p-col">
             <p-inputMask formControlName="id" mask="a999" placeholder="Id Capo"></p-inputMask>
         </div>
@@ -15,9 +15,13 @@
             <h4>Difettoso?</h4>
             <p-inputSwitch formControlName="defect"></p-inputSwitch>
         </div>
+        <div class="ui-fluid p-col">
+          <h4>Brand</h4>
+          <p-listbox formControlName="brand" [options]="brandList" filter="true" [listStyle]="{'max-height':'250px'}"></p-listbox>
+        </div>
         <div class="p-col">
             <h4>Carica Immagine</h4>
-            <p-fileUpload mode="basic" name="img" url="" accept="image/*"></p-fileUpload>
+            <p-fileUpload mode="basic" auto="true" name="img[]" url="" accept="image/*" customUpload="true" (uploadHandler)="addImage($event)"></p-fileUpload>
         </div>
         <p-footer>
           <button pButton label="Crea Capo" icon="pi pi-check" type="submit"></button>
