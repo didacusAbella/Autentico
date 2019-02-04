@@ -27,7 +27,7 @@ const Clothing = db.define('clothing', {
     field: 'defect'
   },
   img: {
-    type: db.Sequelize.BLOB,
+    type: db.Sequelize.STRING(255),
     field: 'img'
   }
 }, { timestamps: false } );

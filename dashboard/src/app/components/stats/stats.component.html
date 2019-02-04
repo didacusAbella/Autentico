@@ -1,0 +1,9 @@
+<section *ngIf="(stats$ | async) as stat">
+  <p-tabView>
+    <p-tabPanel header="Statistiche Testuali">
+      <div *ngFor="let s of stat.results">
+        <p>{{ s }}</p>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</section>

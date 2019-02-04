@@ -169,7 +169,7 @@ INSERT INTO clothings_colors VALUES(53,'A055');
 INSERT INTO clothings_colors VALUES(79,'A056');
 INSERT INTO clothings_colors VALUES(32,'A057');
 INSERT INTO clothings_colors VALUES(40,'A058');
-CREATE TABLE clothings (id VARCHAR (4) PRIMARY KEY NOT NULL UNIQUE, name VARCHAR (30) NOT NULL, collection_fk INTEGER REFERENCES collections (id), brand_fk INTEGER REFERENCES brands (id), img BLOB, description STRING (100), defect BOOLEAN);
+CREATE TABLE clothings (id VARCHAR (4) PRIMARY KEY NOT NULL UNIQUE, name VARCHAR (30) NOT NULL, collection_fk INTEGER REFERENCES collections (id), brand_fk INTEGER REFERENCES brands (id), img STRING (255), description STRING (100), defect BOOLEAN);
 INSERT INTO clothings VALUES('A001','giacca a vento',3,14,NULL,'Some description',1);
 INSERT INTO clothings VALUES('A002','grembiule',8,22,NULL,'Some description',0);
 INSERT INTO clothings VALUES('A003','cappello da baseball',1,3,NULL,'Some description',1);

@@ -14,13 +14,10 @@ class ClothingController {
 
   createClothing(req, res) {
     Clothing.create({
-      id: req.params.id,
-      brand_fk: req.params.brand_fk,
-      collection_fk: req.params.collection_fk,
-      name: req.params.name,
-      defect: req.params.defect,
-      description: req.params.description,
-      img: req.params.img
+      id: req.body.id,
+      name: req.body.name,
+      defect: req.body.defect,
+      img: req.body.img
     })
     .then(createdClothing => ResponseFactory.createSuccessResponse(res, createdClothing))
     .catch(clothingError => ResponseFactory.createInternalServerResponse(res, clothingError));
