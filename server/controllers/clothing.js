@@ -13,12 +13,7 @@ class ClothingController {
   }
 
   createClothing(req, res) {
-    Clothing.create({
-      id: req.body.id,
-      name: req.body.name,
-      defect: req.body.defect,
-      img: req.body.img
-    })
+    Clothing.create(req.body)
     .then(createdClothing => ResponseFactory.createSuccessResponse(res, createdClothing))
     .catch(clothingError => ResponseFactory.createInternalServerResponse(res, clothingError));
   }
@@ -30,22 +25,13 @@ class ClothingController {
   }
 
   updateClothing(req, res) {
-    Clothing.update({
-      name: req.params.name,
-      collection_fk: req.params.collection_fk,
-      brand_fk: req.params.brand_fk,
-      defect: req.params.defect,
-      description: req.params.description,
-      img: req.params.id
-    }, { where: { id: req.params.id }})
+    Clothing.update(req.body)
     .then(updatedClothing => ResponseFactory.createSuccessResponse(res, updatedClothing))
     .catch(clothingError => ResponseFactory.createInternalServerResponse(res, clothingError));
   }
 
   deleteClothing(req, res){
-    Clothing.destroy({
-      where: { id: req.params.id }
-    })
+    Clothing.destroy(req.params.id)
     .then(deletedClothing => ResponseFactory.createSuccessResponse(res, deletedClothing))
     .catch(clothingError => ResponseFactory.createInternalServerResponse(res, clothingError));
   }

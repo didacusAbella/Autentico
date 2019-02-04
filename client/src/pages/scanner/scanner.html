@@ -7,9 +7,10 @@
 </ion-header>
 
 <ion-content>
+  <!--
         <div>
           <ion-card>
-            <!--<img class="imgCustomQR" src="assets/imgs/brscan.png">-->
+            <img class="imgCustomQR" src="assets/imgs/brscan.png">
             <ion-card-content>
               <ion-card-title>
                Scannerizza codice tramite QR
@@ -32,4 +33,25 @@
     </ion-row>
   </ion-col>
   </ion-grid>
+-->
+  <div>
+    <ion-segment [(ngModel)]="testing">
+      <ion-segment-button checked value="stringCode">Inserisci il codice</ion-segment-button>
+      <ion-segment-button value="scannerCode" (click)="scannerFunction()">Scannerizza il codice</ion-segment-button>
+
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="testing">
+    <ion-list *ngSwitchCase="'stringCode'" ngSelected="selected">
+        <ion-item>
+            <ion-label color="primary" floating>Inserisci il codice</ion-label>
+            <ion-input [(ngModel)]="inputValue"></ion-input>
+        </ion-item>
+        <button class="buttonOK" ion-button full round small (click)="ProductFound()">Verifica</button>
+    </ion-list> 
+    <ion-list *ngSwitchCase="'scannerCode'">
+    </ion-list>
+  </div>
+
 </ion-content>

@@ -2,30 +2,11 @@ let path = require('path');
 
 /* Setup Database configuration */
 const DB_CONFIG = {
-  dbName: 'authentic',
-  develop: {
-    username: '',
-    password: '',
-    options: {
-      dialect: 'sqlite',
-      storage: path.resolve(__dirname, "../ext/authentic.db"),
-      operatorsAliases: false
-    }
+  client: 'sqlite3',
+  connection: {
+    filename: path.resolve(__dirname, "../ext/authentic.db"),
   },
-  production: {
-    host: 'localhost',
-    username: 'root',
-    password: 'root',
-    options: {
-      pool: {
-        max: 5,
-        min: 0,
-        idle: 10000
-      },
-      dialect: 'mysql',
-      operatorsAliases: false
-    }
-  }
+  useNullAsDefault: true
 };
 
 /* Export Database's config object*/

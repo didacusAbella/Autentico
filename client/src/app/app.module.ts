@@ -7,7 +7,6 @@ import { ScannerPage } from '../pages/scanner/scanner';
 import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { CodeStringPage } from '../pages/code-string/code-string';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProductFoundPage } from '../pages/product-found/product-found';
@@ -23,8 +22,7 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     AboutPage,
     HomePage,
     TabsPage,
-    CodeStringPage,
-    ProductFoundPage
+    ProductFoundPage,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +37,6 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     AboutPage,
     HomePage,
     TabsPage,
-    CodeStringPage,
     ProductFoundPage
   ],
   providers: [
@@ -51,6 +48,7 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     BackgroundMode,
     BarcodeScanner,
     ToastController,
+    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

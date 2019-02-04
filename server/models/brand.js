@@ -1,19 +1,35 @@
-const db = require('../database/index');
+const knex = require('../database/index');
 
-/**
- * Create Brand table
- * TODO need to add validation rules
- */
-const Brand = db.define('brands', {
-  id: {
-    type: db.Sequelize.INTEGER,
-    field: 'id',
-    primaryKey: true,
-  },
-  name: {
-    type: db.Sequelize.STRING(20),
-    field: 'name'
+class Brand {
+
+  static findAll() {
+    let brandsQuery = knex("brands").select();
+    return brandsQuery;
   }
-}, { timestamps: false });
+
+  static findByPk(id) {
+    let findBrand = knex("brands").select().where("id", id).first();
+    return findBrand;
+  }
+
+  static create(brand) {
+    let createBrand = knex("brands").insert({
+      name: brand.name
+    });
+    return createBrand;
+  }
+
+  static update(brand) {
+    let updateBrand = knex("brands").update({
+      name: brand.name
+    }).where("id", brand.id);
+    return updateBrand;
+  }
+
+  static destroy(id) {
+    let removeBrand = knex("brands").where("id", id).delete();
+    return removeBrand;
+  }
+}
 
 module.exports = Brand;

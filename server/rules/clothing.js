@@ -20,9 +20,7 @@ module.exports = {
     VALID_ID,
     VALID_NAME,
     VALID_DESCRIPTION,
-    VALID_DEFECT,
-    VALID_BRAND,
-    VALID_COLLECTION
+    VALID_DEFECT
   ],
   'deleteClothing': [
     VALID_ID

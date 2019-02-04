@@ -10,16 +10,16 @@ import { App } from 'ionic-angular/components/app/app';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
-   nav: Nav;
-   app: App;
+  rootPage: any = TabsPage;
+  nav: Nav;
+  app: App;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
       platform.registerBackButtonAction(() => {
         this.app.navPop();
-    });
+      });
     });
   }
 }
