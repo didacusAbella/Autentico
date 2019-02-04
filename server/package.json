@@ -1,7 +1,14 @@
 {
-  "name": "autentico",
+  "name": "autentico_api",
   "description": "API RESTful Service for Autentico",
-  "authors": "Diego Avella, Giammaria Giordano, Valeria Pontillo",
+  "author": {
+    "name": "AngryNerds Team"
+  },
+  "contributors": [
+    "Diego Avella",
+    "Giammaria Giordano",
+    "Valeria Pontillo"
+  ],
   "version": "1.0.0",
   "main": "server.js",
   "repository": {
@@ -10,19 +17,20 @@
   "license": "MIT",
   "dependencies": {
     "express": "~4.16.4",
-    "sequelize": "~4.42.0",
+    "knex": "~0.16.3",
     "sqlite3": "~4.0.6",
     "express-validator": "~5.3.1",
-    "body-parser": "1.18.3"
+    "body-parser": "~1.18.3"
   },
   "devDependencies": {
     "mocha": "~5.2.0",
     "chai": "~4.2.0",
-    "chai-http": "~4.2.1"
+    "chai-http": "~4.2.1",
+    "nodemon": "~1.18.9"
   },
   "scripts": {
     "prestart": "node ./ext/load.js",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "test": "mocha --recursive"
   }
 }

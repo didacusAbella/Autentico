@@ -7,10 +7,13 @@ class StatisticController {
   extractStatistics(req, res) {
     let command = `sqlite3_analyzer ${db}`;
     exec(command, function(err, stdout, stderr){
-      res.json({'results': stdout.split('\n')});
+      let parse = stdout.split("\n");
+      parse.splice(395, parse.length - 395);
+      res.json(parse);
     });
   }
 
+ 
 }
 
 module.exports = StatisticController;

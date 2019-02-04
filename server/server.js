@@ -5,13 +5,12 @@ let express = require('express');
 let app = express();
 let API = require('./config/api');
 let bodyParser = require("body-parser");
-require('./models/index');
 /* Setup router api*/
-let clothingApi   = require('./apis/clothing');
-let colorApi      = require('./apis/color');
-let collectionApi = require('./apis/collection');
-let brandApi      = require('./apis/brand');
-let statisticApi  = require('./apis/statistic');
+const clothingApi   = require('./apis/clothing');
+const colorApi      = require('./apis/color');
+const collectionApi = require('./apis/collection');
+const brandApi      = require('./apis/brand');
+const statisticApi  = require('./apis/statistic');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -26,7 +25,7 @@ app.use(function(req, res, next){
 app.use('/clothings', clothingApi);
 app.use('/colors', colorApi);
 app.use('/collections', collectionApi);
-app.use('/brands',brandApi);
+app.use('/brands', brandApi);
 app.use('/statistics', statisticApi);
 
 

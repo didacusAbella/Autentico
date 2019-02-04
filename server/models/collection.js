@@ -1,19 +1,38 @@
-const db = require('../database/index');
+const knex = require('../database/index');
 
-const Collection = db.define('collections', {
-  id: {
-    type: db.Sequelize.INTEGER,
-    field: 'id',
-    primaryKey: true
-  },
-  season: {
-    type: db.Sequelize.STRING(13),
-    field: 'season'
-  },
-  year: {
-    type: db.Sequelize.STRING(9),
-    field: 'year'
+class Collection {
+
+  static findAll() {
+    let findCollections = knex("collections").select();
+    return findCollections;
   }
-}, { timestamps: false });
+
+  static findByPk(id) {
+    let findCollection = knex("collections").select().where("id", id).first();
+    return findCollection;
+  }
+
+  static create(collection) {
+    let createdCollection = knex("collections").insert({
+      season: collection.season,
+      year: collection.year
+    });
+    return createdCollection;
+  }
+
+  static update(collection) {
+    let updatedCollection = knex("collections").update({
+      season: collection.season,
+      year: collection.year
+    }).where("id", collection.id);
+    return updatedCollection;
+  }
+
+  static destroy(id) {
+    let deleteCollection = knex("collections").where("id", id).delete();
+    return deleteCollection;
+  }
+
+}
 
 module.exports = Collection;
