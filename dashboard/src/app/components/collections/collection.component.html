@@ -1,5 +1,5 @@
 <section class="p-grid p-justify-center" id="list-collection">
-  <p-virtualScroller [value]="collections" [itemSize]="250" class="p-col-6" scrollHeight="500px">
+  <p-virtualScroller [value]="collections$ | async" [itemSize]="250" class="p-col-6" scrollHeight="500px">
     <p-header>
       Lista delle Collezioni
     </p-header>

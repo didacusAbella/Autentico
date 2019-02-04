@@ -14,6 +14,7 @@ import { PanelModule } from 'primeng/panel';
 import { FieldsetModule } from "primeng/fieldset";
 import { CollectionDetailComponent } from './detail/collectiondetail.component';
 import { CollectionFormComponent } from './form/collectionform.component';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 const COLLECTION_ROUTES: Routes = [
   {
@@ -35,6 +36,6 @@ const COLLECTION_ROUTES: Routes = [
     RouterModule.forChild(COLLECTION_ROUTES)
   ],
   exports: [RouterModule],
-  providers: [CollectionService]
+  providers: [CollectionService, ConfirmationService, MessageService]
 })
 export class CollectionModule { }

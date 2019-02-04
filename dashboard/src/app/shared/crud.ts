@@ -21,15 +21,15 @@ export class CrudService<T> {
     return this.client.get<T>(`${this.fullApi}/${id}`);
   }
 
-  create(resource: T): Observable<T> {
-    return this.client.post<T>(this.fullApi, resource);
+  create(resource: T): Observable<Number[]> {
+    return this.client.post<Number[]>(this.fullApi, resource);
   }
 
   update(resource: T, id: Number): Observable<Number> {
     return this.client.put<Number>(`${this.fullApi}/${id}`, resource);
   }
 
-  delete(id: Number): Observable<Number> {
+  delete(id: Number | String): Observable<Number> {
     return this.client.delete<Number>(`${this.fullApi}/${id}`);
   }
 
