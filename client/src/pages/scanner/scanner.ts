@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, App } from 'ionic-angular';
-import { CodeStringPage } from '../code-string/code-string';
 import { Dialogs } from '@ionic-native/dialogs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ProductFoundPage } from '../product-found/product-found';
@@ -12,12 +11,13 @@ import { ToastController } from 'ionic-angular';
 })
 
 export class ScannerPage {
-  constructor(public navCtrl: NavController, public app: App, private dialogs: Dialogs, private barcodeScanner: BarcodeScanner, private toastCtr: ToastController) {
+  testing:string
+  inputValue: string;
 
+  constructor(public navCtrl: NavController, public app: App, private dialogs: Dialogs, private barcodeScanner: BarcodeScanner, private toastCtr: ToastController) {
+    this.testing = "stringCode";
   }
-  goAnOtherPage() {
-    this.app.getRootNav().push(CodeStringPage, {}, { animate: false })
-  }
+ 
 
   scannerFunction() {
     this.barcodeScanner.scan().then(barcodeData => {
@@ -26,6 +26,8 @@ export class ScannerPage {
         this.dialogs.alert('Prodotto non trovato. Il capo potrebbe essere contraffatto!', 'Prodotto non trovato')
           .then(() => console.log('Dialog dismissed'))
           .catch(e => console.log('Error displaying dialog', e));
+          this.testing="stringCode";
+
       }
       else if (barcodeData.text == "") {
         let toast = this.toastCtr.create({
@@ -33,6 +35,7 @@ export class ScannerPage {
           duration: 2000,
           position: 'bottom'
         });
+        this.testing="stringCode";
         toast.present(toast);
       }
       else {
@@ -41,5 +44,14 @@ export class ScannerPage {
       }
     });
   }
-
+  ProductFound() {
+    if (this.inputValue != "404") {
+      this.app.getRootNav().push(ProductFoundPage, {}, { animate: false });
+    }
+    else {
+      this.dialogs.alert('Prodotto non trovato. Il capo potrebbe essere contraffatto!','Prodotto non trovato')
+        .then(() => console.log('Dialog dismissed'))
+        .catch(e => console.log('Error displaying dialog', e));
+    }
+  }
 }
