@@ -1,6 +1,7 @@
 <section class="p-grid p-justify-center">
+  <p-confirmDialog [style]="{width: '425px'}"></p-confirmDialog>
   <article class="p-col-8">
-    <p-dataView [value]="clothings" filterBy="name" [paginator]="true" [rows]="10" #dv emptyMessage="Nessun Capo trovato" [sortField]="sortField">
+    <p-dataView [value]="clothings$ | async" filterBy="name" [paginator]="true" [rows]="10" #dv emptyMessage="Nessun Capo trovato" [sortField]="sortField">
       <p-header>
         <div class="p-grid p-align-center">
           <div class="p-col">
@@ -51,4 +52,5 @@
       </p-footer>
     </p-dataView>
   </article>
+  <p-toast></p-toast>
 </section>

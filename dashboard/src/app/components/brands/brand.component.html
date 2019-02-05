@@ -1,7 +1,7 @@
 <section class="p-grid p-justify-center">
   <div id="brand-list" class="p-col-8">
     <p-confirmDialog [style]="{width: '425px'}"></p-confirmDialog>
-    <p-orderList [value]="brands" class="p-col-8" header="Lista Brand" filterBy="id,name" [listStyle]="{'height': '500px'}">
+    <p-orderList [value]="brands$ | async" class="p-col-8" header="Lista Brand" filterBy="id,name" [listStyle]="{'height': '500px'}">
       <ng-template let-brand pTemplate="item">
         <article class="p-grid">
           <div class="p-col">
@@ -18,3 +18,4 @@
     </p-orderList>
   </div>
 </section>
+<p-toast></p-toast>

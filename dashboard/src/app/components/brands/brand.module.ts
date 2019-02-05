@@ -3,16 +3,19 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { ReactiveFormsModule } from '@angular/forms';
-/* Prime NG odules */
+
+/* PrimeNG odules */
 import { FieldsetModule } from 'primeng/fieldset';
 import { OrderListModule } from 'primeng/orderlist';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { SpinnerModule } from 'primeng/spinner';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
+import { ToastModule } from 'primeng/toast';
+
 /* Autentico Libraries */
 import { BrandDetailComponent } from './detail/branddetail.component';
 import { BrandsComponent } from "./brand.component";
@@ -22,22 +25,26 @@ import { BrandFormComponent } from './form/brandform.component';
 
 
 const BRAND_ROUTES: Routes = [
-  { path: 'brands', children: [
-    { path: '', component: BrandsComponent},
-    { path: 'newBrand', component: BrandFormComponent },
-    { path: ':id', component: BrandDetailComponent},
-  ]}
-]
+  { 
+    path: 'brands', children: 
+    [
+      { path: '', component: BrandsComponent},
+      { path: 'newBrand', component: BrandFormComponent },
+      { path: ':id', component: BrandDetailComponent},
+    ]
+  }
+];
 
 @NgModule({
   declarations: [BrandsComponent, BrandDetailComponent, BrandFormComponent],
   imports: [
     CommonModule, SplitButtonModule, ConfirmDialogModule, 
     FieldsetModule, SpinnerModule, OrderListModule, 
-    InputTextModule, ButtonModule, ReactiveFormsModule, 
-    PanelModule, RouterModule.forChild(BRAND_ROUTES)
+    InputTextModule, ButtonModule, ReactiveFormsModule,
+    ToastModule, PanelModule, 
+    RouterModule.forChild(BRAND_ROUTES)
   ],
-  exports: [RouterModule],
-  providers: [BrandService, ConfirmationService]
+  exports: [ RouterModule ],
+  providers: [ BrandService, ConfirmationService, MessageService ]
 })
 export class BrandsModule {}

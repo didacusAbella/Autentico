@@ -14,6 +14,9 @@ import { PanelModule } from 'primeng/panel';
 import { FieldsetModule } from "primeng/fieldset";
 import { CollectionDetailComponent } from './detail/collectiondetail.component';
 import { CollectionFormComponent } from './form/collectionform.component';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 const COLLECTION_ROUTES: Routes = [
   {
@@ -32,9 +35,10 @@ const COLLECTION_ROUTES: Routes = [
     CommonModule, VirtualScrollerModule, ButtonModule,
     InputMaskModule, SpinnerModule, SelectButtonModule, 
     ReactiveFormsModule, FieldsetModule, PanelModule, 
+    ToastModule, ConfirmDialogModule,
     RouterModule.forChild(COLLECTION_ROUTES)
   ],
   exports: [RouterModule],
-  providers: [CollectionService]
+  providers: [CollectionService, ConfirmationService, MessageService]
 })
 export class CollectionModule { }

@@ -16,6 +16,9 @@ import { ClothingService } from './clothing.service';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ListboxModule } from 'primeng/listbox';
 import { ClothingFormComponent } from './form/clothingform.component';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ToastModule } from "primeng/toast";
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 const CLOTHING_ROUTES: Routes = [
   { path: 'clothings', children: [
@@ -31,10 +34,10 @@ const CLOTHING_ROUTES: Routes = [
     InputTextModule, SplitButtonModule, DialogModule, 
     DropdownModule, PanelModule, InputMaskModule, 
     InputSwitchModule, FileUploadModule, ButtonModule,
-    ListboxModule,
+    ListboxModule, ToastModule, ConfirmDialogModule,
     RouterModule.forChild(CLOTHING_ROUTES)
   ],
   exports: [RouterModule],
-  providers: [ClothingService]
+  providers: [ClothingService, ConfirmationService, MessageService]
 })
 export class ClothingModule {}
