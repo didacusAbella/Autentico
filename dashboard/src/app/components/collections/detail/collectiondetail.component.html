@@ -1,9 +1,9 @@
 <section class="p-grid p-justify-center">
   <article class="p-col-8">
-    <form [formGroup]="collectionForm" *ngIf="collectionDetail" (ngSubmit)="updateCollection()">
+    <form [formGroup]="collectionForm" (ngSubmit)="updateCollection()">
       <p-fieldset legend="Modifica Collezione" [toggleable]="true">
         <div class="ui-fluid p-col">
-          <p-spinner formControlName="id" disabled="true"></p-spinner>
+          <p-spinner formControlName="id"></p-spinner>
         </div>
         <div class="ui-fluid p-col">
           <p-inputMask formControlName="year" mask="9999/9999"></p-inputMask>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Brand } from '../brand';
 import { BrandService } from '../brand.service';
-import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'autentico-branddetail',
@@ -10,30 +10,33 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class BrandDetailComponent implements OnInit {
 
-  public selectedBrand: Brand;
   public editBrandForm: FormGroup;
   
-  constructor(private brandService: BrandService, private route: ActivatedRoute) {}
+  constructor(private brandService: BrandService, private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder) {
+    this.editBrandForm = this.formBuilder.group({
+      'id': [{ value: null, disabled: true }, Validators.required],
+      'name': [null, Validators.required]
+    });
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(routes => {
       let brandId = parseInt(routes['id']);
       this.brandService.read(brandId).subscribe(foundBrand => {
-        this.selectedBrand = foundBrand;
-        this.editBrandForm = new FormGroup({
-          name: new FormControl(this.selectedBrand.name, [Validators.required]),
-          id: new FormControl(this.selectedBrand.id, [Validators.required])
-        })
+        this.editBrandForm.get("id").setValue(foundBrand.id);
+        this.editBrandForm.get("name").setValue(foundBrand.name);
       });
     });
   }
 
   public editBrand(): void {
     if(this.editBrandForm.valid){
-      let brand = {} as Brand;
-      brand.id = this.editBrandForm.value.id;
-      brand.name = this.editBrandForm.value.name;
-      this.brandService.update(brand, brand.id).subscribe(row => console.log("Updated Brand"));
+      let brand = new Brand(this.editBrandForm.value);
+      this.brandService.update(brand, brand.id).subscribe(record => {
+        if (record > 0) {
+          this.router.navigate(['/brands']);
+        }
+      });
     }
   }
 }
