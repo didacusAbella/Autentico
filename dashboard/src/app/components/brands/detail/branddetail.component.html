@@ -1,6 +1,6 @@
 <section class="p-grid p-justify-center">
   <article class="p-col-8">
-    <form [formGroup]="editBrandForm" *ngIf="selectedBrand" (ngSubmit)="editBrand()">
+    <form [formGroup]="editBrandForm" (ngSubmit)="editBrand()">
       <p-fieldset legend="Modifica dati" toggleable="true">
         <div class="ui-fluid p-col">
             <p-spinner [disabled]="true" formControlName="id"></p-spinner>

@@ -1,10 +1,9 @@
 <section class="p-grid p-justify-center">
-  <article class="p-col-8" *ngIf="selectedColor">
+  <article class="p-col-8">
     <form [formGroup]="colorForm" (ngSubmit)="editColor()">
-      <p-card header="Modifica Colore" [subheader]="selectedColor.id">
+      <p-card header="Modifica Colore">
         <p-header>
           <input type="hidden" formControlName="id">
-          <div [style.background]="selectedColor.hex"></div>
         </p-header>
         <p-colorPicker inline="true" formControlName="hex"></p-colorPicker>
         <p-footer>

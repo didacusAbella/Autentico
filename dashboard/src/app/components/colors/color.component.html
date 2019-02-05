@@ -12,7 +12,7 @@
       <tr>
         <td>{{ color.id }}</td>
         <td>
-          <div class="preview" [style.background]="color.hex"></div>
+          <div class="preview" [ngStyle]="{'background-color': color.hex }"></div>
         </td>
         <td>
           <button label="Modifica" icon="pi pi-pencil" [routerLink]="['./', color.id]" pButton></button>
