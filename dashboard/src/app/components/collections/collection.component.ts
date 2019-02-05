@@ -25,7 +25,27 @@ export class CollectionComponent implements OnInit {
   }
 
   public deleteCollection(id: number) {
-    
+    this.confirmService.confirm({
+      message: `Vuoi Eliminare la collezione ${id}?`,
+      header: 'Conferma Eliminazione',
+      accept: () => this.onAccept(id),
+      reject: () => this.onReject()
+    })
+  }
+
+  public onAccept(id: number) {
+    this.service.delete(id).subscribe(record => {
+      if (record > 0) {
+        this.collections$.subscribe(collections => {
+          collections.splice(collections.indexOf(collections.find(cl => cl.id === id)), 1);
+          this.messageService.add({ severity: "success", summary: "Eliminazione effettuata", detail: "Collezione eliminata con successo"});
+        });
+      }
+    });
+  }
+
+  public onReject() {
+    this.messageService.add({ severity: "error", summary: "Annullatamento operazione", detail: "Eliminazione Collezione annullata"});
   }
 
 }

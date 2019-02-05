@@ -10,6 +10,9 @@ import { ColorPickerModule } from 'primeng/colorpicker';
 import { CardModule } from 'primeng/card';
 import { ColorDetailComponent } from './detail/colordetail.component';
 import { from } from 'rxjs';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 
 
@@ -23,9 +26,12 @@ const COLOR_ROUTES: Routes = [
 
 @NgModule({
   declarations: [ColorComponent, ColorDetailComponent],
-  imports: [ CommonModule, TableModule, ButtonModule,
-    CardModule, ColorPickerModule, ReactiveFormsModule, RouterModule.forChild(COLOR_ROUTES) ],
-  providers: [ColorService],
+  imports: [ 
+    CommonModule, TableModule, ButtonModule,
+    CardModule, ColorPickerModule, ReactiveFormsModule, 
+    ConfirmDialogModule, ToastModule,
+    RouterModule.forChild(COLOR_ROUTES) ],
+  providers: [ColorService, ConfirmationService, MessageService],
   exports: [RouterModule]
 })
 export class ColorModule { }
