@@ -10,7 +10,11 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 export class AboutPage {
     msg:string;
     linkToApp:string;
-  constructor(public navCtrl: NavController,private emailComposer: EmailComposer,private socialSharing: SocialSharing) {
+  constructor(
+    public navCtrl: NavController,
+    private emailComposer: EmailComposer,
+    private socialSharing: SocialSharing
+    ) {
      this.msg="Ho trovato l\'applicazione Autentico davvero ottima, serve a riconoscere capi firmati!"
      this.linkToApp="https://www.linkToApp.com";
   } 

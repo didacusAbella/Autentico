@@ -9,16 +9,21 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class ProductFoundPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public app:App,public platform : Platform) {}
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public app:App,
+    public platform : Platform
+    ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductFoundPage');
   }
   nextScanner(){
-    this.navCtrl.setRoot(TabsPage, {opentab: 1});
+    this.navCtrl.setRoot(TabsPage, {opentab: 1}); //go to tab "scannerizza codice"
   }
   backArrow(){
-    this.navCtrl.setRoot(TabsPage, {opentab: 0});
+    this.navCtrl.setRoot(TabsPage, {opentab: 0}); 
   }
  
 }

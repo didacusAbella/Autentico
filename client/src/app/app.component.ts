@@ -17,28 +17,29 @@ export class MyApp {
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    public app: App)
-    {
+    public app: App,
+  ) {
     this.inizializeApp();
 
-    }
+  }
 
   inizializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    
+
     this.platform.registerBackButtonAction(() => {
       let nav = this.app.getActiveNav();
       let activeView: ViewController = nav.getActive();
       if (activeView != null) {
-        if (activeView.name == "HomePage" || activeView.name == "ScannerPage" || activeView.name == "AboutPage") {
-          this.confirmExitApp();
-        }
-        else {
-          this.navCtrl.setRoot(TabsPage, { opentab: 1 });
-        }
+        if (this.navCtrl.canGoBack)
+          if (activeView.name == "HomePage" || activeView.name == "ScannerPage" || activeView.name == "AboutPage") {
+            this.confirmExitApp();
+          }
+          else {
+            this.navCtrl.setRoot(TabsPage, { opentab: 1 });
+          }
       }
     });
   }
