@@ -1,6 +1,6 @@
 let Clothing = require('../models/clothing');
 let ResponseFactory = require('../helpers/responsefactory');
-
+let Upload = require("../helpers/upload");
 /**
  * Controller for Clothing model
  */
@@ -13,6 +13,7 @@ class ClothingController {
   }
 
   createClothing(req, res) {
+    Upload.saveImage(req.body);
     Clothing.create(req.body)
     .then(createdClothing => ResponseFactory.createSuccessResponse(res, createdClothing))
     .catch(clothingError => ResponseFactory.createInternalServerResponse(res, clothingError));
@@ -35,7 +36,6 @@ class ClothingController {
     .then(deletedClothing => ResponseFactory.createSuccessResponse(res, deletedClothing))
     .catch(clothingError => ResponseFactory.createInternalServerResponse(res, clothingError));
   }
-
 }
 
 module.exports = ClothingController;

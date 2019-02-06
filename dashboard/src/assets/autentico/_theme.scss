@@ -525,7 +525,7 @@ body {
 				margin: 0;
 				padding: 0.429em 0.857em;
 				border: 0 none;
-				color: $color_mine_shaft_approx;
+				color: $pure_black;
 				background-color: transparent;
 				-moz-border-radius: 0;
 				-webkit-border-radius: 0;
@@ -2245,14 +2245,14 @@ body {
 				color: $color_gunsmoke_approx;
 			}
 			.ui-dropdown-label {
-				color: $color_gunsmoke_approx;
+				color: $pure_black;
 			}
 			&:hover {
 				.ui-dropdown-trigger {
 					color: $color_mine_shaft_approx;
 				}
 				.ui-dropdown-label {
-					color: $color_mine_shaft_approx;
+					color: $pure_black;
 				}
 			}
 		}

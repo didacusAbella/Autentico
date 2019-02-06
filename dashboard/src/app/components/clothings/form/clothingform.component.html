@@ -19,6 +19,14 @@
           <h4>Brand</h4>
           <p-listbox formControlName="brand" [options]="brandList" filter="true" [listStyle]="{'max-height':'250px'}"></p-listbox>
         </div>
+        <div class="ui-fluid p-col">
+          <h4>Stagione</h4>
+          <p-radioButton name="seasongroup" value="Autunno/Inverno" label="Autunno/Inverno" formControlName="season"></p-radioButton>
+          <p-radioButton name="seasongroup" value="Primavera/Estate" label="Primavera/Estate" formControlName="season"></p-radioButton>
+        </div>
+        <div class="ui-fluid p-col">
+          <p-dropdown [options]="years" formControlName="year"></p-dropdown>
+        </div>
         <div class="p-col">
             <h4>Carica Immagine</h4>
             <p-fileUpload mode="basic" auto="true" name="img[]" url="" accept="image/*" customUpload="true" (uploadHandler)="addImage($event)"></p-fileUpload>

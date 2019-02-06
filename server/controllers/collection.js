@@ -36,6 +36,12 @@ class CollectionController {
     .then(deletedCollection => ResponseFactory.createSuccessResponse(res, deletedCollection))
     .catch(collectionError => ResponseFactory.createInternalServerResponse(res, collectionError))
   }
+
+  distinctYears(req, res) {
+    Collection.findYears()
+    .then(years => ResponseFactory.createSuccessResponse(res, years))
+    .catch(yearsError => ResponseFactory.createInternalServerResponse(res, yearsError))
+  }
 }
 
 module.exports = CollectionController;

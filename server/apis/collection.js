@@ -8,6 +8,8 @@ let collectionController = new CollectionController();
 
 router.get('/', collectionController.allCollections);
 
+router.get('/years', collectionController.distinctYears);
+
 router.get('/:id', CollectionRules['findCollectionById'], validateRequest, collectionController.findCollectionById);
 
 router.post('/', CollectionRules['createCollection'], validateRequest, collectionController.createCollection);
