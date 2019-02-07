@@ -12,6 +12,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuEntries = [
+      {
+        label: 'Home', icon: 'pi pi-home', routerLink: 'home'
+      },
       { 
         label: 'File', icon: 'pi pi-file', items: [
           { label: 'Scarica Statistiche', routerLink: '', icon: 'pi pi-download'}
