@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from 'rxjs';
-import { Stats } from './stats';
 import { StatsService } from './stats.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { StatsService } from './stats.service';
 })
 export class StatsComponent implements OnInit {
 
-  public stats$: Observable<Stats>
+  public stats$: Observable<string[]>
 
   constructor(private statsService: StatsService){}
 

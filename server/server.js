@@ -14,6 +14,7 @@ const statisticApi  = require('./apis/statistic');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('ext/images'));
 
 app.use(function(req, res, next){
   res.setHeader('Access-Control-Allow-Origin', '*');

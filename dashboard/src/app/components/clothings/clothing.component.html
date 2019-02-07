@@ -18,7 +18,7 @@
       <ng-template let-clothing pTemplate="listItem">
         <div class="p-grid p-align-center">
           <div class="p-col">
-            <img [src]="clothing.img" alt="cloth image" width="100px" height="100px"/>
+            <img [src]="server + clothing.img" alt="cloth image" width="100px" height="100px"/>
           </div>
           <div class="p-col">
             <h4>{{ clothing.id }}</h4>
@@ -35,7 +35,7 @@
         <p-dialog header="Dettagli" [(visible)]="display" [responsive]="true" [style]="{width: '225px'}" *ngIf="detailedClothing">
           <div class="p-grid">
             <div class="p-col-12">
-                <img [src]="detailedClothing.img" alt="cloth image" width="100px" height="100px"/>
+                <img [src]="server + detailedClothing.img" alt="cloth image" width="100px" height="100px"/>
             </div>
             <div class="p-col-12">
               <dl class="detailedList">

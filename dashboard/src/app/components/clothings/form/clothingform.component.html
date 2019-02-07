@@ -20,12 +20,12 @@
           <p-listbox formControlName="brand" [options]="brandList" filter="true" [listStyle]="{'max-height':'250px'}"></p-listbox>
         </div>
         <div class="ui-fluid p-col">
-          <h4>Stagione</h4>
-          <p-radioButton name="seasongroup" value="Autunno/Inverno" label="Autunno/Inverno" formControlName="season"></p-radioButton>
-          <p-radioButton name="seasongroup" value="Primavera/Estate" label="Primavera/Estate" formControlName="season"></p-radioButton>
+          <h4>Collezione</h4>
+          <p-dropdown [options]="collectionList" placeholder="Seleziona una collezione" formControlName="collection"></p-dropdown>
         </div>
         <div class="ui-fluid p-col">
-          <p-dropdown [options]="years" formControlName="year"></p-dropdown>
+          <h4>Descrizione</h4>
+          <textarea pInputTextArea formControlName="description" placeholder="Massimo 100 caratteri" rows="20" style="width:100%"></textarea>
         </div>
         <div class="p-col">
             <h4>Carica Immagine</h4>

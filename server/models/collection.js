@@ -32,12 +32,6 @@ class Collection {
     let deleteCollection = knex("collections").where("id", id).delete();
     return deleteCollection;
   }
-
-  static findYears() {
-    let years = knex("collections").distinct("year");
-    return years;
-  }
-
 }
 
 module.exports = Collection;

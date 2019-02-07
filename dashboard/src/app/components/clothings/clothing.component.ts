@@ -3,6 +3,7 @@ import { Clothing } from './clothing';
 import { ClothingService } from './clothing.service';
 import { SelectItem, MenuItem, MessageService, ConfirmationService } from 'primeng/api';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { API } from 'src/app/shared/api';
 
 @Component({
   selector: 'autentico-clothing',
@@ -17,12 +18,14 @@ export class ClothingComponent implements OnInit {
   public detailedClothing: Clothing;
   public sortOptions: SelectItem[];
   public sortField: string;
+  public server:string;
 
   constructor(private clothingService: ClothingService, private confirmService: ConfirmationService, private messageService: MessageService) {
     this.sortOptions = [
       { label: "ID", value: "id" },
       { label: "Nome", value: "name" }
     ]
+    this.server = `${API.protocol}://${API.ip}:${API.port}/`;
     this._clothings$ = new BehaviorSubject<Clothing[]>([]);
     this.clothings$ = this._clothings$.asObservable();
   }

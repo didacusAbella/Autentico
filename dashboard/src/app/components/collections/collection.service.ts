@@ -10,8 +10,4 @@ export class CollectionService extends CrudService<Collection> {
   constructor(protected client: HttpClient) {
     super(client, "collections")
   }
-
-  public getYears(): Observable<any[]> {
-    return this.client.get<any[]>(`${this.fullApi}/years`);
-  }
 }

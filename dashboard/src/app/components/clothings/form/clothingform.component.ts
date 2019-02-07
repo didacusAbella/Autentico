@@ -16,12 +16,12 @@ export class ClothingFormComponent implements OnInit {
   
   public clothingForm: FormGroup;
   public brandList: SelectItem[];
-  public years: SelectItem[];
+  public collectionList: SelectItem[];
   
   constructor(private clothingService: ClothingService, private brandService: BrandService, 
     private router: Router, private collectionService: CollectionService, private formBuilder: FormBuilder) {
     this.brandList = new Array();
-    this.years = new Array();
+    this.collectionList = new Array();
   }
 
   ngOnInit(): void {
@@ -31,15 +31,10 @@ export class ClothingFormComponent implements OnInit {
       'description': [''],
       'defect': [false, Validators.required],
       'brand': ['', Validators.required],
-      'season': [null, Validators.required],
-      'year': [null, Validators.required]
+      'collection': [null, Validators.required]
     });
-    this.brandService.readAll().subscribe(brands => {
-      brands.map(brand => this.brandList.push({ label: brand.name, value: brand.id }))
-    });
-    this.collectionService.getYears().subscribe(years => {
-      years.map(obj => this.years.push({ label: obj.year, value: obj.year}));
-    })
+    this.brandService.readAll().subscribe(brands => brands.map(brand => this.brandList.push({ label: brand.name, value: brand.id })) );
+    this.collectionService.readAll().subscribe(collections => collections.map(collection => this.collectionList.push({ label: `${collection.season}-(${collection.year})`, value: collection.id })))
   }
 
   public addImage(event) {
@@ -53,6 +48,11 @@ export class ClothingFormComponent implements OnInit {
 
   public createClothing() {
     let clothing = new Clothing(this.clothingForm.value);
-    this.clothingService.create(clothing).subscribe(row => console.log("Created"));
+    console.log(clothing);
+    this.clothingService.create(clothing).subscribe(row => {
+      if(row.length != 0) {
+        this.router.navigate(['/clothings']);
+      }
+    });
   }
 } 
