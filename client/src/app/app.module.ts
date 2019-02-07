@@ -15,6 +15,7 @@ import { EmailComposer } from '@ionic-native/email-composer';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import {BarcodeScanner} from '@ionic-native/barcode-scanner';
+import { QrScanPage } from '../pages/qr-scan/qr-scan';
 @NgModule({
   declarations: [
     MyApp,
@@ -23,6 +24,7 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     HomePage,
     TabsPage,
     ProductFoundPage,
+    QrScanPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     AboutPage,
     HomePage,
     TabsPage,
-    ProductFoundPage
+    ProductFoundPage,
+    QrScanPage
   ],
   providers: [
     StatusBar,

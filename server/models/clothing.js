@@ -26,13 +26,8 @@ class Clothing {
       defect: clothing.defect,
       description: clothing.description,
       id: clothing.id,
-      collection_fk: knex("collections").select("id").where({
-        season: clothing.season,
-        year: clothing.year
-      }).first(),
-      brand_fk: knex("brands").select("id").where({
-        name: clothing.brand
-      }).first()
+      collection_fk: clothing.collection,
+      brand_fk: clothing.brand
     });
     return createClothing;
   }

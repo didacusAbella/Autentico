@@ -1,16 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { API } from "./api";
 
 export class CrudService<T> {
   
-  protected serverIP: String = "localhost";
-  protected serverPort: Number = 3000;
   protected fullApi: string;
   private endpoint: string;
   
   constructor(protected client: HttpClient, endpoint: string){
     this.endpoint = endpoint;
-    this.fullApi = `http://${this.serverIP}:${this.serverPort}/${this.endpoint}`;
+    this.fullApi = `${API.protocol}://${API.ip}:${API.port}/${this.endpoint}`;
   }
 
   readAll(): Observable<T[]>{

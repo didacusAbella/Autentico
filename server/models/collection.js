@@ -32,7 +32,6 @@ class Collection {
     let deleteCollection = knex("collections").where("id", id).delete();
     return deleteCollection;
   }
-
 }
 
 module.exports = Collection;
