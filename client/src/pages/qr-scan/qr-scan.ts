@@ -46,6 +46,11 @@ export class QrScanPage {
           this.navCtrl.setRoot(TabsPage, { opentab: 1 });
 
         }
+        else if(clothing == null){
+          this.dialogs.alert('Prodotto non trovato. Il capo potrebbe essere contraffatto!', 'Prodotto non trovato')
+          this.testing = "stringCode";
+          this.navCtrl.setRoot(TabsPage, { opentab: 1 });
+        }
         else {
           this.app.getRootNav().push(ProductFoundPage, {
             data: this.clothing
