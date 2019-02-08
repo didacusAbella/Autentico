@@ -20,17 +20,19 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from "primeng/toast";
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { RadioButtonModule } from 'primeng/radiobutton';
+import { ClothingDetailComponent } from './detail/clothingdetail.component';
+
 
 const CLOTHING_ROUTES: Routes = [
   { path: 'clothings', children: [
     { path: '', component: ClothingComponent },
-    { path: 'newClothing', component: ClothingFormComponent }
+    { path: 'newClothing', component: ClothingFormComponent },
+    { path: ':id', component: ClothingDetailComponent}
   ]}
 ];
 
 @NgModule({
-  declarations: [ClothingComponent, ClothingFormComponent],
+  declarations: [ClothingComponent, ClothingFormComponent, ClothingDetailComponent],
   imports: [
     CommonModule, ReactiveFormsModule, DataViewModule, 
     InputTextModule, SplitButtonModule, DialogModule, 

@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { MenuItem } from "primeng/api";
+import { StatsService } from './components/stats/stats.service';
+import * as jsPDF from "jspdf";
 
 @Component({
   selector: 'app-root',
@@ -10,15 +12,12 @@ export class AppComponent implements OnInit {
 
   public menuEntries: MenuItem[];
 
+  constructor(private statsService: StatsService) {}
+
   ngOnInit(): void {
     this.menuEntries = [
       {
         label: 'Home', icon: 'pi pi-home', routerLink: 'home'
-      },
-      { 
-        label: 'File', icon: 'pi pi-file', items: [
-          { label: 'Scarica Statistiche', routerLink: '', icon: 'pi pi-download'}
-        ]
       },
       {
         label: 'Modifica', icon: 'pi pi-pencil', items: [
@@ -31,12 +30,10 @@ export class AppComponent implements OnInit {
         label: 'Visualizza', icon: 'pi pi-eye', items: [
           { label: 'Capi', routerLink: 'clothings', icon: "pi pi-info-circle"},
           { label: 'Brand', routerLink: 'brands', icon: "pi pi-info-circle"},
-          { label: 'Collezioni', routerLink: 'collections', icon: "pi pi-info-circle"},
-          { label: 'Colori', routerLink: 'colors', icon: "pi pi-info-circle"}
+          { label: 'Collezioni', routerLink: 'collections', icon: "pi pi-info-circle"}
         ]
       },
       { label: 'Info', icon: 'pi pi-info', routerLink: 'info'}
     ];
-  }
-  
+  } 
 }
