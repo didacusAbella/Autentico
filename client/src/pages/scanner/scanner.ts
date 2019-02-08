@@ -32,10 +32,15 @@ export class ScannerPage {
   ProductFound() {
     this.httpClient.get<Clothing>(`${API.protocol}://${API.ip}:${API.port}/clothings/${this.inputValue}`).subscribe((clothing) => {
       this.clothing = clothing;
-      this.app.getRootNav().setRoot(ProductFoundPage, {
-        data: this.clothing
-      });
-    },error=>{
+      if (clothing == null) {
+        this.dialogs.alert('Prodotto non trovato. Il capo potrebbe essere contraffatto!', 'Prodotto non trovato')
+      }
+      else {
+        this.app.getRootNav().setRoot(ProductFoundPage, {
+          data: this.clothing
+        });
+      }
+    }, error => {
       this.dialogs.alert('Prodotto non trovato. Il capo potrebbe essere contraffatto!', 'Prodotto non trovato')
     })
   }
