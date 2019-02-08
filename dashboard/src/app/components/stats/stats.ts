@@ -1,8 +1,12 @@
 export class Stats {
 
-  public results: any;
+  public description: string;
+  public numericValue: string;
+  public percentage: string;
 
-  constructor(parameters){
-    this.results = parameters.results; 
+  constructor(description: string, numericValue: string, percentage?: string){
+    this.description = description;
+    this.numericValue = numericValue;
+    this.percentage = percentage;
   }
 }

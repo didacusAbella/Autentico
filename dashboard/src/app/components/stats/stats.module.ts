@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { StatsComponent } from './stats.component';
 import { StatsService } from './stats.service';
-import { TabViewModule } from 'primeng/tabview';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { CarouselModule } from 'primeng/carousel';
+
+
 
 const STATS_ROUTES: Routes = [
   {
@@ -14,7 +17,7 @@ const STATS_ROUTES: Routes = [
 @NgModule({
   declarations: [StatsComponent],
   imports: [
-    CommonModule, TabViewModule,
+    CommonModule, ScrollPanelModule, CarouselModule,
     RouterModule.forRoot(STATS_ROUTES)
   ],
   exports: [RouterModule],
