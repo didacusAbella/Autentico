@@ -16,6 +16,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 import { QrScanPage } from '../pages/qr-scan/qr-scan';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     MyApp,
@@ -24,10 +25,12 @@ import { QrScanPage } from '../pages/qr-scan/qr-scan';
     HomePage,
     TabsPage,
     ProductFoundPage,
-    QrScanPage
+    QrScanPage,
+    
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp, {
       animate: false // disable animation
     })
