@@ -1768,8 +1768,8 @@ body {
 			a {
 				padding: 0.571em 1em;
 				border: 1px solid $color_pumice_approx;
-				color: $color_mine_shaft_approx;
-				background-color: $wild_sand;
+				color: $white;
+				background-color: $color_lochmara_approx;
 				color: $color_mine_shaft_approx;
 				font-weight: 400;
 				-moz-transition: background-color 0.2s;
@@ -1818,7 +1818,7 @@ body {
 		.ui-accordion-content {
 			border: 1px solid $color_pumice_approx;
 			background-color: $white;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			padding: 0.571em 1em;
 		}
 	.ui-tabview {
@@ -2918,12 +2918,12 @@ body {
 			padding: 0.571em 0.857em;
 			border: 1px solid $color_pumice_approx;
 			font-weight: 700;
-			color: $color_mine_shaft_approx;
-			background-color: $wild_sand;
+			color: $white;
+			background-color: $color_lochmara_approx;
 		}
 		.ui-treetable-tbody > tr {
 			background: $white;
-			color: $color_mine_shaft_approx;
+			color: $pure_black;
 			> td {
 				padding: 0.571em 0.857em;
 				background: inherit;

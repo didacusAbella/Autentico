@@ -1,7 +1,16 @@
-<section *ngIf="stat">
-  <p-tabView>
-    <p-tabPanel header="Statistiche Testuali">
-      
-    </p-tabPanel>
-  </p-tabView>
+<section>
+  <div id="mainSection">
+    <h3>Statistiche del DB di Autentico</h3>
+    <p-scrollPanel [style]="{height: '700px'}">
+      <div class="p-col-12" *ngFor="let entry of statistics | keyvalue">
+        <p-carousel [value]="entry.value" [headerText]="entry.key">
+          <ng-template let-stat pTemplate="item">
+            <p>Descrizione: {{ stat.description }}</p>
+            <p>Valore Numerico: {{ stat.numericValue}}</p>
+            <p>Percentuale: {{ stat.percentage }}</p>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </p-scrollPanel>
+  </div>
 </section>

@@ -1,47 +1,48 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from 'rxjs';
 import { StatsService } from './stats.service';
+import { Stats } from './stats';
+import {TreeNode} from 'primeng/api';
 
 @Component({
   selector: 'autentico-stats',
   templateUrl: './stats.component.html',
-  host: { 'class': 'p-col-10' }
+  host: { 'class': 'p-col-10' },
+  styleUrls: ['./stats.component.scss']
 })
 export class StatsComponent implements OnInit {
 
-  public stats: any;
-
+  public statistics: any;
   constructor(private statsService: StatsService){
-    this.stats = { };
+    this.statistics = {};
   }
 
   ngOnInit(): void {
     let actualKey: string;
     this.statsService.extractStats().subscribe(lines => {
       lines.forEach( line => {
-        //console.log(line);
         if(line.startsWith("/")) {
-          actualKey = 'root';
-          this.stats[actualKey] = [];
+          actualKey = "Generale";
+          this.statistics[actualKey] = [];
         } else if (line.startsWith("*")){
-          //console.log("sono chiave");
           actualKey = line.replace(/\*/g, "");
-          this.stats['root'][actualKey] = [];
-        } else if (line.length === 0) {
-          console.log("Skip");
-        } else {
-          let index = line.indexOf(".");
-          let key = line.substring(0, index);
-          let value = line.substring(index, line.length -1)
-          let optional = value.substring(0, value.lastIndexOf(" "));
-          if(actualKey === "root") {
-            this.stats['root'].push({ entry: key, stat: value.replace(/\./g, "").trim(), percentage: optional || null });
-          } else {
-            this.stats['root'][actualKey].push({ entry: key, stat: value, percentage: optional || null });
+          this.statistics[actualKey] = [];
+        } else if (line.length !== 0 && !line.includes("Percentage")){
+          let stats: Stats = this.parseLine(line);
+          if(stats) {
+            this.statistics[actualKey].push(stats);
           }
         }
       });
     });
-    console.log(this.stats);
+    console.log(this.statistics);
+  }
+
+  private parseLine(line: string): Stats {
+      let descriptionIndex = line.indexOf(".");
+      let description = line.substring(0, descriptionIndex);
+      let numericValue = line.substring(descriptionIndex).replace(/\s/, "");
+      let percentage = numericValue.substring(numericValue.indexOf(" "), numericValue.lastIndexOf(" "));
+      let updatedPercentage = numericValue.replace(/^(\.+)/g, "");
+      return new Stats(description, updatedPercentage.substring(0, updatedPercentage.indexOf(" ")), percentage.trim()); 
   }
 }
