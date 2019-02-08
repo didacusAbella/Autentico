@@ -13,14 +13,14 @@
 
     <ion-item>
       <ion-avatar item-start>
-        <img src="assets/imgs/dg.png">
+       <!-- <img src="assets/imgs/dg.png"> -->
       </ion-avatar>
       <ion-card-title style="text-align:left;">
-          Dolce & Gabbana
+          {{clothing.brand}}
         </ion-card-title>
     </ion-item>
 
-    <img class="scaleImg" src="assets/imgs/jeans.png">
+    <img class="scaleImg" [src]="server+'A001.png'" alt="noImg">
   </ion-card>
   <div>
     <ion-card>
@@ -29,12 +29,12 @@
           Info
         </ion-card-title>
         <p>
-          Capo d'abbigliamento: Jeans <br>
+          Capo d'abbigliamento: {{clothing.name}} <br>
           Colore: Blu <br>
-          Descrizione: Jeans 100% cotone <br>
-          Collezione: Primavera Estate 2017 <br>
-          Difetti: No <br>
-          Qualità: Alta<br>
+          Descrizione: {{clothing.description}} <br>
+          Difetti: {{clothing.defect ? "si" : "no"}} <br>
+          Stagione: {{clothing.season}}<br>
+          Anno: {{clothing.year}}
         </p>
       </ion-card-content>
     </ion-card>
