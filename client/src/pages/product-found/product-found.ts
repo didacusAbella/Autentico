@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, App, Platform } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { Clothing } from '../../app/Clothing';
+import { API} from '../../shared/api'
 
 @Component({
   selector: 'page-product-found',
@@ -8,13 +10,19 @@ import { TabsPage } from '../tabs/tabs';
   
 })
 export class ProductFoundPage {
-
+  public clothing: Clothing;
+  public server : string;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public app:App,
     public platform : Platform
-    ) {}
+    )
+    {
+      this.clothing = navParams.get("data")
+      console.log(this.clothing)
+      this.server = `${API.protocol}://${API.ip}:${API.port}/` 
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductFoundPage');

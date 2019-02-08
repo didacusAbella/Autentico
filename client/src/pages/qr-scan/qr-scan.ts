@@ -5,6 +5,9 @@ import { ProductFoundPage } from '../product-found/product-found';
 import { App } from 'ionic-angular/components/app/app';
 import { Dialogs } from '@ionic-native/dialogs';
 import { TabsPage } from '../tabs/tabs';
+import { API } from '../../shared/api'
+import { Clothing } from '../../app/Clothing';
+import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -14,34 +17,50 @@ import { TabsPage } from '../tabs/tabs';
 export class QrScanPage {
   testing: string
   inputValue: string;
+  clothing: Clothing
+  anyErrors: boolean
 
   constructor(
     public navCtrl: NavController,
     public app: App,
     private dialogs: Dialogs,
     private barcodeScanner: BarcodeScanner,
+    private httpClient: HttpClient,
     private toastCtr: ToastController,
   ) {
+
     this.barcodeScanner.scan().then(barcodeData => {
-      if (barcodeData.text == "404") {
+      this.httpClient.get<Clothing>(`${API.protocol}://${API.ip}:${API.port}/clothings/${barcodeData.text}`).subscribe((clothing) => {
+        this.clothing = clothing;
+        //in case hardware back is pressed
+        if (barcodeData.text == "") {
+          let toast = this.toastCtr.create({
+            message: 'Operazione annullata',
+            duration: 2000,
+            position: 'bottom'
+          });
+
+          this.testing = "stringCode";
+          toast.present(toast);
+          console.log("enter in empty case")
+          this.navCtrl.setRoot(TabsPage, { opentab: 1 });
+
+        }
+        else if(clothing == null){
+          this.dialogs.alert('Prodotto non trovato. Il capo potrebbe essere contraffatto!', 'Prodotto non trovato')
+          this.testing = "stringCode";
+          this.navCtrl.setRoot(TabsPage, { opentab: 1 });
+        }
+        else {
+          this.app.getRootNav().push(ProductFoundPage, {
+            data: this.clothing
+          });
+        }
+      }, error => {
         this.dialogs.alert('Prodotto non trovato. Il capo potrebbe essere contraffatto!', 'Prodotto non trovato')
         this.testing = "stringCode";
         this.navCtrl.setRoot(TabsPage, { opentab: 1 });
-      }
-
-      else if (barcodeData.text == "") {
-        let toast = this.toastCtr.create({
-          message: 'Operazione annullata',
-          duration: 2000,
-          position: 'bottom'
-        });
-
-        this.testing = "stringCode";
-        toast.present(toast);
-      }
-      else {
-        this.app.getRootNav().push(ProductFoundPage, {}, { animate: false })
-      }
+      })
     }); //close barcodeScaner.scan().then()
   }
 

@@ -7,7 +7,6 @@ let API = require('./config/api');
 let bodyParser = require("body-parser");
 /* Setup router api*/
 const clothingApi   = require('./apis/clothing');
-const colorApi      = require('./apis/color');
 const collectionApi = require('./apis/collection');
 const brandApi      = require('./apis/brand');
 const statisticApi  = require('./apis/statistic');
@@ -24,7 +23,6 @@ app.use(function(req, res, next){
 });
 
 app.use('/clothings', clothingApi);
-app.use('/colors', colorApi);
 app.use('/collections', collectionApi);
 app.use('/brands', brandApi);
 app.use('/statistics', statisticApi);

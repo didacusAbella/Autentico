@@ -30,7 +30,9 @@
     "@ionic-native/status-bar": "~4.15.0",
     "@ionic-native/toast": "^5.0.0",
     "@ionic/storage": "2.2.0",
+    "@types/node": "^10.12.21",
     "cordova-android": "7.1.4",
+    "cordova-browser": "5.0.4",
     "cordova-plugin-background-mode": "^0.7.2",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-dialogs": "^2.0.1",
@@ -83,7 +85,8 @@
       "cordova-plugin-x-toast": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

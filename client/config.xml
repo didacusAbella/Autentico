@@ -90,4 +90,5 @@
     <plugin name="cordova-plugin-x-toast" spec="2.7.2" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <engine name="android" spec="7.1.4" />
+    <engine name="browser" spec="5.0.4" />
 </widget>

@@ -32,6 +32,7 @@ class ClothingController {
   }
 
   deleteClothing(req, res){
+    Upload.removeImage(req.params.id);
     Clothing.destroy(req.params.id)
     .then(deletedClothing => ResponseFactory.createSuccessResponse(res, deletedClothing))
     .catch(clothingError => ResponseFactory.createInternalServerResponse(res, clothingError));

@@ -1,0 +1,34 @@
+<section class="p-grid p-justify-center">
+    <article class="p-col-8">
+      <p-panel>
+        <p-header>
+          <h3>Modifica Capo</h3>
+        </p-header>
+        <form [formGroup]="clothingForm" (ngSubmit)="editClothing()" *ngIf="clothingForm">
+          <div class="ui-fluid p-col">
+              <input type="text" pInputText placeholder="Inserisci Nome" formControlName="name">
+          </div>
+          <div class="ui-fluid p-col">
+              <h4>Difettoso?</h4>
+              <p-inputSwitch formControlName="defect"></p-inputSwitch>
+          </div>
+          <div class="ui-fluid p-col">
+            <h4>Brand</h4>
+            <p-listbox formControlName="brand" [options]="brandList" *ngIf="brandList" filter="true" [listStyle]="{'max-height':'250px'}"></p-listbox>
+          </div>
+          <div class="ui-fluid p-col">
+            <h4>Collezione</h4>
+            <p-dropdown [options]="collectionList" *ngIf="collectionList" placeholder="Seleziona una collezione" formControlName="collection"></p-dropdown>
+          </div>
+          <div class="ui-fluid p-col">
+            <h4>Descrizione</h4>
+            <textarea pInputTextArea formControlName="description" placeholder="Massimo 100 caratteri" rows="20" style="width:100%"></textarea>
+          </div>
+          <p-footer>
+            <button pButton label="Modifica Capo" icon="pi pi-pencil" type="submit"></button>
+          </p-footer>
+        </form>
+      </p-panel>
+      <p-toast></p-toast>
+    </article>
+  </section>

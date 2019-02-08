@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 /* Custom components */
 import {TitlebarComponent} from "./components/titlebar/titlebar.component";
+import { StatsService } from './components/stats/stats.service';
 
 
 @NgModule({
