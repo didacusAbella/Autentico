@@ -20,26 +20,26 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from "primeng/toast";
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { ClothingDetailComponent } from './detail/clothingdetail.component';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 
 const CLOTHING_ROUTES: Routes = [
   { path: 'clothings', children: [
     { path: '', component: ClothingComponent },
-    { path: 'newClothing', component: ClothingFormComponent },
-    { path: ':id', component: ClothingDetailComponent}
+    { path: 'newClothing', component: ClothingFormComponent }
   ]}
 ];
 
 @NgModule({
-  declarations: [ClothingComponent, ClothingFormComponent, ClothingDetailComponent],
+  declarations: [ClothingComponent, ClothingFormComponent],
   imports: [
     CommonModule, ReactiveFormsModule, DataViewModule, 
     InputTextModule, SplitButtonModule, DialogModule, 
     DropdownModule, PanelModule, InputMaskModule, 
     InputSwitchModule, FileUploadModule, ButtonModule,
     ListboxModule, ToastModule, ConfirmDialogModule,
-    InputTextareaModule,
+    InputTextareaModule, MessagesModule, MessageModule,
     RouterModule.forChild(CLOTHING_ROUTES)
   ],
   exports: [RouterModule],

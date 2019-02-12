@@ -8,10 +8,12 @@
         <p-fieldset legend="Inserisci Campi">
           <div class="ui-fluid">
             <input pInputText placeholder="Nome Brand" formControlName="name">
+            <p-message severity="error" text="Campo obbligatorio" *ngIf="!createBrandForm.controls['name'].valid && createBrandForm.controls['name'].dirty">
+            </p-message>
           </div>
         </p-fieldset>
         <p-footer>
-          <button pButton label="Crea Nuovo Brand" icon="pi pi-check" type="submit"></button>
+          <button pButton label="Crea Nuovo Brand" icon="pi pi-check" type="submit" [disabled]="!createBrandForm.valid"></button>
         </p-footer>
       </p-panel>
     </form>

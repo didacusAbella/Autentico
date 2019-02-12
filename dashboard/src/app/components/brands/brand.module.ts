@@ -21,6 +21,8 @@ import { BrandDetailComponent } from './detail/branddetail.component';
 import { BrandsComponent } from "./brand.component";
 import { BrandService } from './brand.service';
 import { BrandFormComponent } from './form/brandform.component';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
 
 
 
@@ -41,7 +43,7 @@ const BRAND_ROUTES: Routes = [
     CommonModule, SplitButtonModule, ConfirmDialogModule, 
     FieldsetModule, SpinnerModule, OrderListModule, 
     InputTextModule, ButtonModule, ReactiveFormsModule,
-    ToastModule, PanelModule, 
+    ToastModule, PanelModule, MessageModule, MessagesModule,
     RouterModule.forChild(BRAND_ROUTES)
   ],
   exports: [ RouterModule ],

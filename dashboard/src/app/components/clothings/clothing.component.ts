@@ -43,7 +43,6 @@ export class ClothingComponent implements OnInit {
 
   public loadOptions(clothingId): MenuItem[] {
     let options: MenuItem[] = new Array();
-    options.push({ label: "Modifica", icon: "pi pi-pencil", routerLink: `${clothingId}` });
     options.push({ label: "Elimina", icon: "pi pi-trash", command: () => this.deleteClothing(clothingId) });
     return options;
   }

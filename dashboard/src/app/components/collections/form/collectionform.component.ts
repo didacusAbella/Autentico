@@ -1,7 +1,8 @@
 import { Component, OnInit} from "@angular/core";
 import { Collection } from '../collection';
 import { CollectionService } from '../collection.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'autentico-collectionform',
@@ -13,7 +14,7 @@ export class CollectionFormComponent implements OnInit {
   public collectionForm: FormGroup;
   public seasons: any[];
 
-  constructor(private service: CollectionService){
+  constructor(private service: CollectionService, private builder: FormBuilder, private router: Router){
     this.seasons = [
       { name: "Autunno/Inverno" },
       { name: "Primavera/Estate" }
@@ -21,18 +22,21 @@ export class CollectionFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.collectionForm = new FormGroup({
-      season: new FormControl(''),
-      year: new FormControl('')
+    this.collectionForm = this.builder.group({
+      'season': ['', Validators.required],
+      'year': ['', Validators.required]
     });
   }
 
   public createCollection() {
     if(this.collectionForm.valid){
-      let newCollection = {} as Collection;
+      let newCollection = new Collection(this.collectionForm.value);
       newCollection.season = this.collectionForm.value.season.name;
-      newCollection.year = this.collectionForm.value.year;
-      this.service.create(newCollection).subscribe(dt => console.log(dt));
+      this.service.create(newCollection).subscribe(dt => {
+        if(dt.length != 0) {
+          this.router.navigate(["/collections"]);
+        }
+      });
     }
   }
 
