@@ -7,21 +7,31 @@
       <form [formGroup]="clothingForm" (ngSubmit)="createClothing()" enctype="multipart/form-data">
         <div class="ui-fluid p-col">
             <p-inputMask formControlName="id" mask="a999" placeholder="Id Capo"></p-inputMask>
+            <p-message severity="error" text="Campo obbligatorio" *ngIf="!clothingForm.controls['id'].valid && clothingForm.controls['id'].dirty">
+            </p-message>
         </div>
         <div class="ui-fluid p-col">
             <input type="text" pInputText placeholder="Inserisci Nome" formControlName="name">
+            <p-message severity="error" text="Campo obbligatorio" *ngIf="!clothingForm.controls['name'].valid && clothingForm.controls['name'].dirty">
+            </p-message>
         </div>
         <div class="ui-fluid p-col">
             <h4>Difettoso?</h4>
             <p-inputSwitch formControlName="defect"></p-inputSwitch>
+            <p-message severity="error" text="Campo obbligatorio" *ngIf="!clothingForm.controls['defect'].valid && clothingForm.controls['defect'].dirty">
+            </p-message>
         </div>
         <div class="ui-fluid p-col">
           <h4>Brand</h4>
           <p-listbox formControlName="brand" [options]="brandList" filter="true" [listStyle]="{'max-height':'250px'}"></p-listbox>
+          <p-message severity="error" text="Campo obbligatorio" *ngIf="!clothingForm.controls['brand'].valid && clothingForm.controls['brand'].dirty">
+          </p-message>
         </div>
         <div class="ui-fluid p-col">
           <h4>Collezione</h4>
           <p-dropdown [options]="collectionList" placeholder="Seleziona una collezione" formControlName="collection"></p-dropdown>
+          <p-message severity="error" text="Campo obbligatorio" *ngIf="!clothingForm.controls['collection'].valid && clothingForm.controls['collection'].dirty">
+          </p-message>
         </div>
         <div class="ui-fluid p-col">
           <h4>Descrizione</h4>
@@ -32,7 +42,7 @@
             <p-fileUpload mode="basic" auto="true" name="img[]" url="" accept="image/*" customUpload="true" (uploadHandler)="addImage($event)"></p-fileUpload>
         </div>
         <p-footer>
-          <button pButton label="Crea Capo" icon="pi pi-check" type="submit"></button>
+          <button pButton label="Crea Capo" icon="pi pi-check" type="submit" [disabled]="!clothingForm.valid"></button>
         </p-footer>
       </form>
     </p-panel>
