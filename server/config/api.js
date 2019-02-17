@@ -1,5 +1,5 @@
 const API = {
-  host: "172.19.10.151",
+  host: "localhost",
   port: "3000",
   version: [1,0,0].join('.'),
 }

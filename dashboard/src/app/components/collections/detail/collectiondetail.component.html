@@ -7,12 +7,16 @@
         </div>
         <div class="ui-fluid p-col">
           <p-inputMask formControlName="year" mask="9999/9999"></p-inputMask>
+          <p-message severity="error" text="Campo obbligatorio" *ngIf="!collectionForm.controls['year'].valid && collectionForm.controls['year'].dirty">
+          </p-message>
         </div>
         <div class="p-col">
           <p-selectButton formControlName="season" [options]="seasons" optionLabel="name"></p-selectButton>
+          <p-message severity="error" text="Campo obbligatorio" *ngIf="!collectionForm.controls['season'].valid && collectionForm.controls['season'].dirty">
+          </p-message>
         </div>
         <div class="p-col">
-          <button type="submit" pButton label="Modifica Collezione" icon="pi pi-pencil"></button>
+          <button type="submit" pButton label="Modifica Collezione" icon="pi pi-pencil" [disabled]="!collectionForm.valid"></button>
         </div>
       </p-fieldset>
     </form>

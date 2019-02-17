@@ -24,7 +24,7 @@ export class CrudService<T> {
     return this.client.post<Number[]>(this.fullApi, resource);
   }
 
-  update(resource: T, id: Number): Observable<Number> {
+  update(resource: T, id: Number | String): Observable<Number> {
     return this.client.put<Number>(`${this.fullApi}/${id}`, resource);
   }
 

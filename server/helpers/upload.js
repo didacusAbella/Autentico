@@ -10,6 +10,13 @@ class Upload {
     });
     data.img = imageName;
   }
+
+  static removeImage(name) {
+    let imageName = `${name}.png`;
+    fs.unlink(path.resolve(__dirname, "..", "ext", "images", imageName), function(error){
+      console.log(error);
+    });
+  }
 }
 
 

@@ -2,6 +2,7 @@ import { Component, OnInit} from "@angular/core";
 import { Brand } from '../brand';
 import { BrandService } from '../brand.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'autentico-brandform',
@@ -12,7 +13,7 @@ export class BrandFormComponent implements OnInit {
   public createdBrand: Brand;
   public createBrandForm: FormGroup;
 
-  constructor(private brandService: BrandService) {}
+  constructor(private brandService: BrandService, private router: Router) {}
 
   ngOnInit(): void {
     this.createBrandForm = new FormGroup({
@@ -22,10 +23,11 @@ export class BrandFormComponent implements OnInit {
 
   public createBrand() {
     if(this.createBrandForm.valid) {
-      let newBrand = {} as Brand;
-      newBrand.name = this.createBrandForm.value.name;
+      let newBrand = new Brand(this.createBrandForm.value);
       this.brandService.create(newBrand).subscribe(br => {
-        console.log("Crearted"+br);
+        if(br.length !== 0) {
+          this.router.navigate(['/brands']);
+        }
       });
     }
   }

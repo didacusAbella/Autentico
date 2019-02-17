@@ -9,14 +9,18 @@
           <div class="p-col">
             <h4>Stagione:</h4>
             <p-selectButton formControlName="season" [options]="seasons" optionLabel="name"></p-selectButton>
+            <p-message severity="error" text="Campo obbligatorio" *ngIf="!collectionForm.controls['season'].valid && collectionForm.controls['season'].dirty">
+            </p-message>
           </div>
           <div class="ui-fluid p-col">
             <h4>Anno</h4>
             <p-inputMask formControlName="year" mask="9999/9999" placeholder="Inserisci Anno"></p-inputMask>
+            <p-message severity="error" text="Campo obbligatorio" *ngIf="!collectionForm.controls['year'].valid && collectionForm.controls['year'].dirty">
+            </p-message>
           </div>
         </p-fieldset>
         <p-footer>
-          <button type="submit" pButton icon="pi pi-check" label="Crea Collezione"></button>
+          <button type="submit" pButton icon="pi pi-check" label="Crea Collezione" [disabled]="!collectionForm.valid"></button>
         </p-footer>
       </p-panel>
     </form>

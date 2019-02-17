@@ -7,9 +7,11 @@
         </div>
         <div class="ui-fluid p-col">
             <input id="brandName" type="text" size="30" pInputText formControlName="name" placeholder="Modifica Nome">
+            <p-message severity="error" text="Campo obbligatorio" *ngIf="!editBrandForm.controls['name'].valid && editBrandForm.controls['name'].dirty">
+            </p-message>
         </div>
         <div class="p-col">
-            <button pButton label="Modifica" type="submit"></button>
+            <button pButton label="Modifica" type="submit" [disabled]="!editBrandForm.valid"></button>
         </div>
       </p-fieldset>
     </form>
