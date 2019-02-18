@@ -17,5 +17,13 @@ Autentico is a series of software products used for smart clothing. There are th
 3. Ionic Framework v3/4 compatible;
 
 ## How to install
+Prerequisites:
+1. install sqlite3 and sqlite3_analyzer and add to your PATH
+2. install nodejs and npm
+3. if you want build the app you have to install Android SDK and ionic
 
-Work in progress
+Step to install
+1. `git clone https://github.com/didacusabella/Autentico`
+2. if you want to start the server: ` cd server && npm install && npm start`
+3. if you want to start the dashboard: ` cd dashboard && npm install && npm start`
+4. if yout want to start the mobile  `cd client && ionic cordova run <android|ios>`
