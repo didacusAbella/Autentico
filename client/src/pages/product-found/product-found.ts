@@ -21,7 +21,7 @@ export class ProductFoundPage {
     {
       this.clothing = navParams.get("data")
       console.log(this.clothing)
-      this.server = `${API.protocol}://${API.ip}:${API.port}/` 
+      this.server = `${API.protocol}://${API.ip}:${API.port}/clothings/` 
     }
 
   ionViewDidLoad() {
