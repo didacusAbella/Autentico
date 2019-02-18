@@ -12,15 +12,12 @@
   <ion-card>
 
     <ion-item>
-      <ion-avatar item-start>
-       <!-- <img src="assets/imgs/dg.png"> -->
-      </ion-avatar>
-      <ion-card-title style="text-align:left;">
+      <ion-card-title style="text-align:center;">
           {{clothing.brand}}
         </ion-card-title>
     </ion-item>
 
-    <img class="scaleImg" [src]="server+'A001.png'" alt="noImg">
+    <img class="scaleImg" [src]="server + clothing.img" alt="noImg">
   </ion-card>
   <div>
     <ion-card>
@@ -30,7 +27,6 @@
         </ion-card-title>
         <p>
           Capo d'abbigliamento: {{clothing.name}} <br>
-          Colore: Blu <br>
           Descrizione: {{clothing.description}} <br>
           Difetti: {{clothing.defect ? "si" : "no"}} <br>
           Stagione: {{clothing.season}}<br>
