@@ -1,5 +1,3 @@
 node_modules
 *.sqlite
 *.db
-*.jpg
-*.png

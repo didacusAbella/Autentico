@@ -25,7 +25,7 @@ export class ClothingComponent implements OnInit {
       { label: "ID", value: "id" },
       { label: "Nome", value: "name" }
     ]
-    this.server = `${API.protocol}://${API.ip}:${API.port}/`;
+    this.server = `${API.protocol}://${API.ip}:${API.port}/clothings/`;
     this._clothings$ = new BehaviorSubject<Clothing[]>([]);
     this.clothings$ = this._clothings$.asObservable();
   }

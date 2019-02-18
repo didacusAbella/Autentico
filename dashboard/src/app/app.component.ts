@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { MenuItem } from "primeng/api";
 import { StatsService } from './components/stats/stats.service';
-import * as jsPDF from "jspdf";
 
 @Component({
   selector: 'app-root',
