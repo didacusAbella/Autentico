@@ -1,4 +1,3 @@
 node_modules
 *.sqlite
 *.db
-package-lock.json
