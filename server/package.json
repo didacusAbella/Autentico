@@ -24,7 +24,7 @@
     "cors": "^2.8.5"
   },
   "devDependencies": {
-    "mocha": "^10.2.0",
+    "mocha": "^10.8.2",
     "chai": "^4.3.7",
     "chai-http": "^4.3.0",
     "nodemon": "^2.0.20"
